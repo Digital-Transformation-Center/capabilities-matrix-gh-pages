@@ -1,0 +1,172 @@
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
+
+const rootDir = path.resolve(__dirname, '..');
+const contentDir = path.join(rootDir, 'content');
+const outputDir = path.join(rootDir, 'src', 'data');
+const outputFile = path.join(outputDir, 'matrixData.json');
+
+console.log('🔄 Compiling Markdown Matrix Data...');
+
+// Ensure output directory exists
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
+// Helper to safely list markdown files in a subfolder
+function getMdFiles(subDir) {
+  const targetDir = path.join(contentDir, subDir);
+  if (!fs.existsSync(targetDir)) return [];
+  return fs.readdirSync(targetDir)
+    .filter(f => f.endsWith('.md'))
+    .map(f => ({
+      fileName: f,
+      fullPath: path.join(targetDir, f),
+      relativePath: `content/${subDir}/${f}`
+    }));
+}
+
+// Helper to parse dimensions (width, length, height in mm)
+function parseDimensions(dim) {
+  if (!dim) return null;
+  if (typeof dim === 'object' && !Array.isArray(dim)) {
+    const w = parseFloat(dim.width || dim.w || 0);
+    const l = parseFloat(dim.length || dim.l || 0);
+    const h = parseFloat(dim.height || dim.h || 0);
+    if (w || l || h) return { width: w, length: l, height: h };
+  }
+  if (typeof dim === 'string') {
+    // Parse "650 x 1100 x 1450" or "650, 1100, 1450"
+    const parts = dim.toLowerCase().replace(/mm|in|"/g, '').split(/[x,×]/).map(p => parseFloat(p.trim())).filter(n => !isNaN(n));
+    if (parts.length >= 2) {
+      return {
+        width: parts[0] || 0,
+        length: parts[1] || 0,
+        height: parts[2] || 0
+      };
+    }
+  }
+  return null;
+}
+
+// 1. Read Capabilities
+const capabilityFiles = getMdFiles('capabilities');
+const capabilitiesMap = {};
+
+capabilityFiles.forEach(({ fileName, fullPath, relativePath }) => {
+  const rawContent = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(rawContent);
+
+  if (!data.id) {
+    console.warn(`⚠️ Warning: Capability file ${fileName} is missing 'id' in frontmatter.`);
+    return;
+  }
+
+  capabilitiesMap[data.id] = {
+    id: data.id,
+    title: data.title || data.id,
+    icon: data.icon || 'Cpu',
+    color: data.color || '#3B82F6',
+    category: data.category || 'General Capability',
+    summary: data.summary || '',
+    body: content.trim(),
+    relativePath: relativePath,
+    tools: [],
+    projects: []
+  };
+});
+
+// 2. Read Tools
+const toolFiles = getMdFiles('tools');
+const toolsMap = {};
+
+toolFiles.forEach(({ fileName, fullPath, relativePath }) => {
+  const rawContent = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(rawContent);
+
+  if (!data.id) {
+    console.warn(`⚠️ Warning: Tool file ${fileName} is missing 'id' in frontmatter.`);
+    return;
+  }
+
+  const toolObj = {
+    id: data.id,
+    title: data.title || data.id,
+    capabilityId: data.capability || '',
+    type: data.type || 'Equipment / Tool',
+    dimensions: parseDimensions(data.dimensions || data.footprint),
+    tags: Array.isArray(data.tags) ? data.tags : [],
+    summary: data.summary || '',
+    body: content.trim(),
+    relativePath: relativePath,
+    projects: []
+  };
+
+  toolsMap[data.id] = toolObj;
+
+  // Add tool reference to capability
+  if (data.capability && capabilitiesMap[data.capability]) {
+    capabilitiesMap[data.capability].tools.push(data.id);
+  } else if (data.capability) {
+    console.warn(`⚠️ Tool '${data.id}' references unknown capability '${data.capability}'`);
+  }
+});
+
+// 3. Read Projects
+const projectFiles = getMdFiles('projects');
+const projectsMap = {};
+
+projectFiles.forEach(({ fileName, fullPath, relativePath }) => {
+  const rawContent = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(rawContent);
+
+  if (!data.id) {
+    console.warn(`⚠️ Warning: Project file ${fileName} is missing 'id' in frontmatter.`);
+    return;
+  }
+
+  const toolIds = Array.isArray(data.tools) ? data.tools : [];
+  const derivedCapabilityIds = new Set();
+
+  toolIds.forEach(tId => {
+    if (toolsMap[tId]) {
+      // Link project to tool
+      toolsMap[tId].projects.push(data.id);
+
+      // Extract capability from tool
+      const capId = toolsMap[tId].capabilityId;
+      if (capId && capabilitiesMap[capId]) {
+        derivedCapabilityIds.add(capId);
+        // Link project to capability
+        if (!capabilitiesMap[capId].projects.includes(data.id)) {
+          capabilitiesMap[capId].projects.push(data.id);
+        }
+      }
+    } else {
+      console.warn(`⚠️ Project '${data.id}' references unknown tool '${tId}'`);
+    }
+  });
+
+  projectsMap[data.id] = {
+    id: data.id,
+    title: data.title || data.id,
+    status: data.status || 'Active',
+    lead: data.lead || 'DTC Team',
+    tools: toolIds,
+    capabilities: Array.from(derivedCapabilityIds),
+    summary: data.summary || '',
+    body: content.trim(),
+    relativePath: relativePath
+  };
+});
+
+const outputData = {
+  compiledAt: new Date().toISOString(),
+  capabilities: Object.values(capabilitiesMap),
+  tools: Object.values(toolsMap),
+  projects: Object.values(projectsMap)
+};
+
+fs.writeFileSync(outputFile, JSON.stringify(outputData, null, 2), 'utf8');
+console.log(`✅ Matrix Data compiled successfully! (${outputData.capabilities.length} capabilities, ${outputData.tools.length} tools, ${outputData.projects.length} projects)`);
