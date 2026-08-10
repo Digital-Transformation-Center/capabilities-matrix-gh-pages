@@ -3,29 +3,93 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager - DTC Capabilities Matrix</title>
+  <title>DTC Model Shop CRM - Content Manager</title>
   
   <!-- Load domain configuration -->
   <script src="/site-config.js"></script>
   
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <style>
+    /* Dark Theme & Custom Branding for Decap CMS Login Screen */
+    body {
+      background-color: #0f172a !important;
+      color: #f8fafc !important;
+      font-family: 'Roboto', system-ui, -apple-system, sans-serif !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    *, *::before, *::after {
+      border-radius: 0px !important;
+    }
+
+    /* Hide Decap CMS default SVG logo */
+    div[class*="AuthenticationPage"] svg,
+    div[class*="IconWrapper"] svg,
+    div[class*="Logo-"] svg,
+    section[class*="AuthenticationPage"] svg {
+      display: none !important;
+    }
+
+    /* Display DTC Logo on CMS Auth Screen */
+    div[class*="AuthenticationPage"]::before,
+    section[class*="AuthenticationPage"]::before,
+    div[class*="IconWrapper"]::before {
+      content: "";
+      display: block;
+      width: 280px;
+      height: 70px;
+      margin: 0 auto 2rem auto;
+      background-image: url('/dtc-logo-primary.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Dark theme card styling for CMS Login box */
+    div[class*="AuthenticationPage"] section,
+    section[class*="AuthenticationPage"],
+    div[class*="Card-"] {
+      background-color: #1e293b !important;
+      border: 1px solid #334155 !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+      padding: 2.5rem 2rem !important;
+      color: #f8fafc !important;
+    }
+
+    /* Custom Login Button Styling */
+    button[class*="LoginButton"],
+    button[class*="Button"] {
+      background-color: #0284c7 !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      border: 1px solid #0369a1 !important;
+      border-radius: 0px !important;
+      padding: 0.75rem 1.5rem !important;
+      transition: background-color 0.15s ease !important;
+      font-size: 0.95rem !important;
+      cursor: pointer !important;
+    }
+
+    button[class*="LoginButton"]:hover,
+    button[class*="Button"]:hover {
+      background-color: #0369a1 !important;
+    }
+  </style>
 </head>
 <body>
   <script>
     if (window.netlifyIdentity) {
-      // Determine netlify URL from config
       const netlifyBase = (window.SITE_CONFIG && window.SITE_CONFIG.netlifyUrl) 
         ? window.SITE_CONFIG.netlifyUrl.replace(/\/$/, '') 
-        : '';
+        : 'https://dtc-modelshop-capabilities.netlify.app';
 
-      if (netlifyBase) {
-        window.netlifyIdentity.init({
-          APIUrl: netlifyBase + '/.netlify/identity'
-        });
-      }
+      window.netlifyIdentity.init({
+        APIUrl: netlifyBase + '/.netlify/identity'
+      });
 
-      // Handle login and token redirection cleanly
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
@@ -34,9 +98,39 @@
         }
       });
     }
+
+    // MutationObserver to replace Netlify Identity button text with "Login to DTC Model Shop CRM"
+    const updateButtonText = () => {
+      const targetText = "Login to DTC Model Shop CRM";
+      
+      // Update DOM buttons inside Decap CMS
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(btn => {
+        if (btn.textContent && (btn.textContent.includes('Netlify Identity') || btn.textContent.includes('Login with') || btn.textContent.includes('Log in with'))) {
+          btn.textContent = targetText;
+        }
+      });
+
+      // Update Netlify Identity Modal iframe if open
+      const iframe = document.getElementById('netlify-identity-widget');
+      if (iframe && iframe.contentDocument) {
+        const modalBtns = iframe.contentDocument.querySelectorAll('.btn, button');
+        modalBtns.forEach(mBtn => {
+          if (mBtn.textContent && mBtn.textContent.toLowerCase().includes('log in with')) {
+            mBtn.textContent = targetText;
+          }
+        });
+      }
+    };
+
+    const observer = new MutationObserver(updateButtonText);
+    document.addEventListener("DOMContentLoaded", () => {
+      observer.observe(document.body, { childList: true, subtree: true });
+      setInterval(updateButtonText, 300);
+    });
   </script>
 
-  <!-- Load Decap CMS AFTER Identity script initialization -->
+  <!-- Load Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>

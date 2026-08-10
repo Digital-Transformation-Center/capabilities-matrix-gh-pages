@@ -1,18 +1,6 @@
 {
-  "compiledAt": "2026-08-10T15:02:28.571Z",
+  "compiledAt": "2026-08-10T17:03:35.603Z",
   "capabilities": [
-    {
-      "id": "edge-compute-ai",
-      "title": "edge-compute-ai",
-      "icon": "Cpu",
-      "color": "#3B82F6",
-      "category": "General Capability",
-      "summary": "",
-      "body": "",
-      "relativePath": "content/capabilities/edge-compute-ai.md",
-      "tools": [],
-      "projects": []
-    },
     {
       "id": "electronic-assembly",
       "title": "Electronic Assembly",

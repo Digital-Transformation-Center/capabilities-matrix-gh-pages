@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, FolderGit2, Search, Grid, Compass, Ruler } from 'lucide-react';
+import { Cpu, FolderGit2, Search, Grid, Ruler } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: 'capabilities' | 'projects' | 'matrix';
@@ -28,9 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="header">
       <div className="header-top">
         <div className="brand">
-          <div className="brand-icon">
-            <Compass size={24} />
-          </div>
+          <img src="/dtc-logo-primary.png" alt="Digital Transformation Center Logo" className="brand-logo-img" style={{ height: '44px', width: 'auto', objectFit: 'contain' }} />
           <div className="brand-text">
             <h1>DTC Model Shop Matrix</h1>
             <p>Digital Transformation Center Capabilities & Projects Inspector</p>
