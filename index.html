@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Digital Transformation Center Model Shop - Interactive Capabilities, Tools, and Demonstrator Projects Matrix" />
     <title>DTC Model Shop Capabilities & Projects Matrix</title>
+    <!-- Load domain configuration generated from site-config.json -->
+    <script src="/site-config.js"></script>
     <!-- Netlify Identity Widget for authentication invite/login redirect handling -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
@@ -14,6 +16,12 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       if (window.netlifyIdentity) {
+        if (window.SITE_CONFIG && window.SITE_CONFIG.netlifyUrl) {
+          const netlifyBase = window.SITE_CONFIG.netlifyUrl.replace(/\/$/, '');
+          window.netlifyIdentity.init({
+            APIUrl: netlifyBase + '/.netlify/identity'
+          });
+        }
         window.netlifyIdentity.on("init", user => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
