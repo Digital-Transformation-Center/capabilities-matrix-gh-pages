@@ -4,22 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - DTC Capabilities Matrix</title>
-  <!-- Load domain configuration generated from site-config.json -->
+  
+  <!-- Load domain configuration -->
   <script src="/site-config.js"></script>
+  
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Decap CMS App Entry -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     if (window.netlifyIdentity) {
-      if (window.SITE_CONFIG && window.SITE_CONFIG.netlifyUrl) {
-        const netlifyBase = window.SITE_CONFIG.netlifyUrl.replace(/\/$/, '');
+      // Determine netlify URL from config
+      const netlifyBase = (window.SITE_CONFIG && window.SITE_CONFIG.netlifyUrl) 
+        ? window.SITE_CONFIG.netlifyUrl.replace(/\/$/, '') 
+        : '';
+
+      if (netlifyBase) {
         window.netlifyIdentity.init({
           APIUrl: netlifyBase + '/.netlify/identity'
         });
       }
+
+      // Handle login and token redirection cleanly
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
@@ -29,5 +35,8 @@
       });
     }
   </script>
+
+  <!-- Load Decap CMS AFTER Identity script initialization -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
