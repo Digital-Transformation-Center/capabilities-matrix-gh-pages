@@ -1,17 +1,20 @@
 /* DTC MkDocs Custom Theme Overrides - Clean Slate Dark Aesthetic */
 
+/* Live Style Sync from Main DTC Site */
+@import url("https://digital-transformation-center.github.io/assets/css/extra.css");
+
 :root {
   --md-primary-fg-color: #051d49;
   --md-primary-fg-color--light: #0d2b68;
   --md-primary-fg-color--dark: #020f28;
   --md-accent-fg-color: #ef4444;
 
-  --md-default-bg-color: #0f172a;
-  --md-default-fg-color: #f8fafc;
+  --md-default-bg-color: #0b0f19;
+  --md-default-fg-color: #f1f5f9;
   --md-default-fg-color--light: #cbd5e1;
   --md-default-fg-color--lighter: #94a3b8;
 
-  --md-code-bg-color: #1e293b;
+  --md-code-bg-color: #131b2e;
   --md-code-fg-color: #38bdf8;
 
   --md-typeset-a-color: #38bdf8;
@@ -119,7 +122,7 @@ a.md-button:hover {
 /* Header & Navigation Styling */
 .md-header {
   background-color: #051d49 !important;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #1e293b;
 }
 
 .md-header__title {
@@ -129,26 +132,77 @@ a.md-button:hover {
 
 .md-tabs {
   background-color: #0a255c !important;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Footer & Article Next/Previous Navigation Styling */
+.md-footer {
+  background-color: #051d49 !important;
+  border-top: 1px solid #1e293b;
+  color: #cbd5e1;
+}
+
+.md-footer-nav {
+  background-color: #051d49 !important;
+}
+
+.md-footer__link {
+  color: #f1f5f9 !important;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.md-footer__link:hover {
+  background-color: #0a255c !important;
+  color: #38bdf8 !important;
+}
+
+.md-footer__title {
+  color: #f8fafc !important;
+  font-weight: 600;
+}
+
+.md-footer__direction {
+  color: #38bdf8 !important;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.md-footer-meta {
+  background-color: #020f28 !important;
+  border-top: 1px solid #1e293b;
+}
+
+.md-copyright {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.md-copyright a {
+  color: #38bdf8 !important;
+}
+
+.md-copyright a:hover {
+  color: #ef4444 !important;
 }
 
 /* Tables */
 .md-typeset table:not([class]) {
   width: 100%;
   border-collapse: collapse;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #131b2e;
+  border: 1px solid #1e293b;
 }
 
 .md-typeset table:not([class]) th {
   background-color: #051d49;
   color: #ffffff;
   font-weight: 600;
-  border: 1px solid #334155;
+  border: 1px solid #1e293b;
   padding: 0.6rem 0.8rem;
 }
 
 .md-typeset table:not([class]) td {
-  border: 1px solid #334155;
+  border: 1px solid #1e293b;
   padding: 0.6rem 0.8rem;
 }
