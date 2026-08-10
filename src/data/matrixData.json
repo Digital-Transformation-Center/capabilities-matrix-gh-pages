@@ -1,6 +1,18 @@
 {
-  "compiledAt": "2026-07-30T23:58:44.730Z",
+  "compiledAt": "2026-08-10T14:34:20.586Z",
   "capabilities": [
+    {
+      "id": "edge-compute-ai",
+      "title": "edge-compute-ai",
+      "icon": "Cpu",
+      "color": "#3B82F6",
+      "category": "General Capability",
+      "summary": "",
+      "body": "",
+      "relativePath": "content/capabilities/edge-compute-ai.md",
+      "tools": [],
+      "projects": []
+    },
     {
       "id": "electronic-assembly",
       "title": "Electronic Assembly",
@@ -18,8 +30,10 @@
       ],
       "projects": [
         "airframe-testing",
+        "automated-paint-twin",
         "cobot-maintenance",
         "edge-ai-benchmark",
+        "microscale-inspector",
         "mosa-payload-pod",
         "threat-detection-pod"
       ]
@@ -36,12 +50,15 @@
       "tools": [
         "dic-camera-system",
         "digital-microscope",
+        "structured-light-scanner",
         "thermal-camera"
       ],
       "projects": [
         "airframe-testing",
         "am-metrology",
-        "edge-ai-benchmark"
+        "automated-paint-twin",
+        "edge-ai-benchmark",
+        "microscale-inspector"
       ]
     },
     {
@@ -59,8 +76,10 @@
       "projects": [
         "airframe-testing",
         "am-metrology",
+        "automated-paint-twin",
         "cobot-maintenance",
         "edge-ai-benchmark",
+        "microscale-inspector",
         "mosa-payload-pod",
         "threat-detection-pod"
       ]
@@ -80,8 +99,10 @@
       "projects": [
         "airframe-testing",
         "am-metrology",
+        "automated-paint-twin",
         "cobot-maintenance",
-        "edge-ai-benchmark"
+        "edge-ai-benchmark",
+        "microscale-inspector"
       ]
     },
     {
@@ -98,6 +119,7 @@
         "smart-vision-system"
       ],
       "projects": [
+        "automated-paint-twin",
         "cobot-maintenance"
       ]
     }
@@ -124,6 +146,7 @@
       "body": "# Benchtop Collaborative Robot Arm\n\nCompact 6-axis collaborative robot arm used in the DTC Model Shop for prototyping automated pick-and-place routines, testing custom 3D-printed end-effectors, and developing automated maintenance workflows.\n\n## Features\n- 6-degree-of-freedom articulated arm with torque feedback safety sensors for cage-free operation.\n- Standardized tool flange interface supporting quick-change magnetic and pneumatic tool changers.\n- Programmable digital/analog I/O and Ethernet interface for integrating grippers and sensors.\n- Teach pendant and Python/ROS API support for rapid trajectory and motion sequence development.",
       "relativePath": "content/tools/cobot-arm.md",
       "projects": [
+        "automated-paint-twin",
         "cobot-maintenance"
       ]
     },
@@ -147,8 +170,10 @@
       "body": "# Programmable DC Bench Power Supply & Analyzer\n\nBenchtop multi-channel programmable DC power supply used in the DTC Model Shop to deliver regulated voltage rails and measure dynamic power consumption across electronic prototypes and edge compute hardware.\n\n## Features\n- Multi-channel isolated DC outputs with precise voltage and current limit regulation.\n- High-resolution real-time voltage, current, and wattage monitoring.\n- Dynamic data logging for profiling power spikes, idle power, and watt-per-inference metrics.\n- Over-voltage and over-current protection (OVP/OCP) to safeguard sensitive development boards.",
       "relativePath": "content/tools/dc-power-supply.md",
       "projects": [
+        "automated-paint-twin",
         "cobot-maintenance",
-        "edge-ai-benchmark"
+        "edge-ai-benchmark",
+        "microscale-inspector"
       ]
     },
     {
@@ -172,7 +197,8 @@
       "body": "# Digital Image Correlation (DIC) Optical System\n\nStereoscopic optical metrology tool used in the DTC Model Shop to capture high-speed 3D surface deformation, strain distribution, and displacement fields without physical contact.\n\n## Features\n- High-resolution dual stereo camera setup with synchronized high-speed capture.\n- Real-time full-field 3D strain mapping and displacement tracking under load.\n- Direct export of optical deformation mesh data for comparison against FEA simulation models.\n- Non-contact measurement ideal for lightweight composite, carbon fiber, and 3D-printed components.",
       "relativePath": "content/tools/dic-camera-system.md",
       "projects": [
-        "airframe-testing"
+        "airframe-testing",
+        "microscale-inspector"
       ]
     },
     {
@@ -220,8 +246,10 @@
       "projects": [
         "airframe-testing",
         "am-metrology",
+        "automated-paint-twin",
         "cobot-maintenance",
         "edge-ai-benchmark",
+        "microscale-inspector",
         "mosa-payload-pod",
         "threat-detection-pod"
       ]
@@ -248,8 +276,10 @@
       "projects": [
         "airframe-testing",
         "am-metrology",
+        "automated-paint-twin",
         "cobot-maintenance",
-        "edge-ai-benchmark"
+        "edge-ai-benchmark",
+        "microscale-inspector"
       ]
     },
     {
@@ -272,6 +302,7 @@
       "relativePath": "content/tools/oscilloscope.md",
       "projects": [
         "airframe-testing",
+        "automated-paint-twin",
         "cobot-maintenance",
         "edge-ai-benchmark",
         "mosa-payload-pod",
@@ -349,10 +380,35 @@
       "relativePath": "content/tools/soldering.md",
       "projects": [
         "airframe-testing",
+        "automated-paint-twin",
         "cobot-maintenance",
         "edge-ai-benchmark",
+        "microscale-inspector",
         "mosa-payload-pod",
         "threat-detection-pod"
+      ]
+    },
+    {
+      "id": "structured-light-scanner",
+      "title": "Metrology-Grade Structured Light 3D Scanner",
+      "capabilityId": "metrology-and-inspection",
+      "type": "Measurement & Metrology",
+      "dimensions": {
+        "width": 300,
+        "length": 200,
+        "height": 150
+      },
+      "tags": [
+        "Structured Light",
+        "3D Scanning",
+        "Metrology",
+        "Inspection"
+      ],
+      "summary": "High-precision structured light 3D scanner for detailed surface measurement and inspection applications.",
+      "body": "# Metrology-Grade Structured Light 3D Scanner\n\nHigh-precision structured light 3D scanner for detailed surface measurement and inspection applications.\n\n## Features\n- High-resolution 3D scanning capabilities for accurate surface characterization.\n- Real-time data processing and analysis for efficient quality control.\n- Integration with metrology software for comprehensive reporting and documentation.",
+      "relativePath": "content/tools/structured-light-scanner.md",
+      "projects": [
+        "automated-paint-twin"
       ]
     },
     {
@@ -425,6 +481,31 @@
       "relativePath": "content/projects/am-metrology.md"
     },
     {
+      "id": "automated-paint-twin",
+      "title": "Automated Twinning of Paint Application for Quality Assurance",
+      "status": "Early Development",
+      "lead": "Robotics and Machine Learning Team",
+      "tools": [
+        "fdm-3dp",
+        "cobot-arm",
+        "metal-chop-saw",
+        "soldering",
+        "oscilloscope",
+        "dc-power-supply",
+        "structured-light-scanner"
+      ],
+      "capabilities": [
+        "rapid-prototyping",
+        "robotics-and-automation",
+        "rigging-and-construction",
+        "electronic-assembly",
+        "metrology-and-inspection"
+      ],
+      "summary": "A robotic arm fitted with a custom end effector and vision system to perform automated paint thickness measurements and defect detection on painted surfaces, enabling rapid quality assurance and process optimization.",
+      "body": "# Automated Twinning of Paint Application for Quality Assurance\n\n- **Physical:** A robotic arm equipped with a custom end effector that includes a paint thickness gauge and high-resolution camera for surface inspection.\n\n- **Digital/AI:** Utilizes computer vision and machine learning algorithms to analyze paint thickness measurements and detect surface defects, providing real-time feedback for process optimization.\n\n- **Member Interest:** Machine learning for defect detection and multiphysics co-simulation (Ansys), 3D optical metrology and physical-to-digital validation (Trilion Quality Systems), embedded ML and algorithm execution (MathWorks), materials and human factors (UDRI).",
+      "relativePath": "content/projects/automated-paint-twin.md"
+    },
+    {
       "id": "cobot-maintenance",
       "title": "Modular Quick-Change Cobot Maintenance Tooling",
       "status": "Concept",
@@ -471,6 +552,28 @@
       "summary": "An actively cooled, sensorized test rack for benchmarking low-power edge compute modules, measuring real-time current draw, thermal performance, and inference latency across vision AI models.",
       "body": "# Edge AI Model Benchmarking & Thermal Test Fixture\r\n\r\n- **Physical:** An actively cooled, sensorized test rack holding multiple low-power edge compute modules, instrumented to monitor real-time current draw and thermal generation.\r\n    \r\n- **Digital/AI:** Displays live frame rates, watt-per-inference metrics, and latency across different optimized vision architectures (e.g., YOLO variants vs. quantized models).\r\n    \r\n- **Member Interest:** Algorithm optimization (MathWorks), edge hardware evaluation (IBM), defense venture acceleration (Sightline Ventures).",
       "relativePath": "content/projects/edge-ai-benchmark.md"
+    },
+    {
+      "id": "microscale-inspector",
+      "title": "ML-Informed Material Stress Visualization",
+      "status": "Concept",
+      "lead": "Materials, Machine Learning, and Robotics Team",
+      "tools": [
+        "metal-chop-saw",
+        "soldering",
+        "dic-camera-system",
+        "dc-power-supply",
+        "fdm-3dp"
+      ],
+      "capabilities": [
+        "rigging-and-construction",
+        "electronic-assembly",
+        "metrology-and-inspection",
+        "rapid-prototyping"
+      ],
+      "summary": "Automatically manipulate composite material samples while using microscale neural operators to predict and project stress and strain fields onto the sample surface for real-time visualization of material behavior under load.",
+      "body": "# ML-Informed Material Stress Visualization\n\n- **Physical:** Composite material samples instrumented with sensors to measure stress and strain fields.\n    \n- **Digital/AI:** Utilizes microscale neural operators to predict and project stress and strain fields onto the sample surface for real-time visualization.\n    \n- **Member Interest:** Ceramic Matrix Composites (CMCs) testing and physics-based failure modeling (UDRI), 3D optical strain tracking and Digital Image Correlation (Trilion Quality Systems), real-time multiphysics co-simulation and visualization (Ansys), immersive AR/VR digital twin projections (Bloc Digital).",
+      "relativePath": "content/projects/microscale-inspector.md"
     },
     {
       "id": "mosa-payload-pod",
