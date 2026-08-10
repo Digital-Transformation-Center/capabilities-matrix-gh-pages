@@ -40,33 +40,9 @@ const siteConfigJsContent = `// Auto-generated from site-config.json during buil
 fs.writeFileSync(siteConfigJsPath, siteConfigJsContent, 'utf8');
 console.log('⚙️ Populated public/site-config.js from site-config.json');
 
-// Auto-update site_url in admin/config.yml
-const adminConfigYamlPath = path.join(rootDir, 'admin', 'config.yml');
-if (fs.existsSync(adminConfigYamlPath)) {
-  let yamlContent = fs.readFileSync(adminConfigYamlPath, 'utf8');
-  const siteUrlRegex = /^site_url:.*$/m;
-  const newSiteUrlLine = `site_url: "${siteConfig.githubPagesUrl}"`;
-  if (siteUrlRegex.test(yamlContent)) {
-    yamlContent = yamlContent.replace(siteUrlRegex, newSiteUrlLine);
-  }
-  fs.writeFileSync(adminConfigYamlPath, yamlContent, 'utf8');
-}
-
 // Generate content/site-config.js for MkDocs site output
 const contentSiteConfigJsPath = path.join(contentDir, 'site-config.js');
 fs.writeFileSync(contentSiteConfigJsPath, siteConfigJsContent, 'utf8');
-
-// Ensure admin files are copied to content/admin and public/admin for MkDocs/Vite build output
-const adminSrc = path.join(rootDir, 'admin');
-const adminContent = path.join(contentDir, 'admin');
-const adminPublic = path.join(rootDir, 'public', 'admin');
-if (fs.existsSync(adminSrc)) {
-  fs.mkdirSync(adminContent, { recursive: true });
-  fs.cpSync(adminSrc, adminContent, { recursive: true });
-  fs.mkdirSync(adminPublic, { recursive: true });
-  fs.cpSync(adminSrc, adminPublic, { recursive: true });
-  console.log('📁 Synced /admin directory to /content/admin for MkDocs build output.');
-}
 
 // Helper to safely list markdown files in a subfolder
 function getMdFiles(subDir) {

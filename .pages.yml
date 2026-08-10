@@ -1,0 +1,138 @@
+# Pages CMS Configuration for DTC Model Shop Capabilities Matrix
+# Reference: https://pagescms.org/docs/config
+
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  - name: capabilities
+    label: Capabilities
+    label_singular: Capability
+    type: collection
+    path: content/capabilities
+    format: yaml-frontmatter
+    view:
+      fields: [title, category]
+    fields:
+      - name: id
+        label: ID / Slug
+        type: string
+        required: true
+      - name: title
+        label: Capability Name
+        type: string
+        required: true
+      - name: category
+        label: Category / Area
+        type: string
+      - name: icon
+        label: Icon
+        type: select
+        default: material/chip
+        options:
+          - label: "Chip / Microcontroller (material/chip)"
+            value: "material/chip"
+          - label: "Eye / Inspection (material/eye-outline)"
+            value: "material/eye-outline"
+          - label: "3D Printer / Fabrication (material/printer-3d)"
+            value: "material/printer-3d"
+          - label: "Hammer & Wrench / Construction (material/hammer-wrench)"
+            value: "material/hammer-wrench"
+          - label: "Robot / Automation (material/robot)"
+            value: "material/robot"
+          - label: "CPU / Electronics (material/cpu-64-bit)"
+            value: "material/cpu-64-bit"
+          - label: "Cog / Engineering (material/cog-outline)"
+            value: "material/cog-outline"
+          - label: "Toolbox (material/toolbox-outline)"
+            value: "material/toolbox-outline"
+          - label: "Scanner / Optical (material/barcode-scan)"
+            value: "material/barcode-scan"
+          - label: "Camera / Vision (material/camera-outline)"
+            value: "material/camera-outline"
+          - label: "Gauge / Metrology (material/gauge)"
+            value: "material/gauge"
+          - label: "Wrench / Maintenance (material/wrench-outline)"
+            value: "material/wrench-outline"
+      - name: color
+        label: Badge Color Hex
+        type: string
+        default: "#3B82F6"
+      - name: summary
+        label: Summary
+        type: string
+      - name: body
+        label: Detailed Content (Markdown)
+        type: rich-text
+
+  - name: tools
+    label: Tools & Equipment
+    label_singular: Tool
+    type: collection
+    path: content/tools
+    format: yaml-frontmatter
+    view:
+      fields: [title, capability, type]
+    fields:
+      - name: id
+        label: Tool ID / Slug
+        type: string
+        required: true
+      - name: title
+        label: Tool Name
+        type: string
+        required: true
+      - name: capability
+        label: Parent Capability Slug (id)
+        type: string
+        required: true
+      - name: type
+        label: Tool Type / Classification
+        type: string
+      - name: dimensions
+        label: Dimensions
+        type: string
+      - name: tags
+        label: Tags
+        type: list
+      - name: summary
+        label: Summary
+        type: string
+      - name: body
+        label: Detailed Content (Markdown)
+        type: rich-text
+
+  - name: projects
+    label: Demonstrator Projects
+    label_singular: Project
+    type: collection
+    path: content/projects
+    format: yaml-frontmatter
+    view:
+      fields: [title, status, lead]
+    fields:
+      - name: id
+        label: Project ID / Slug
+        type: string
+        required: true
+      - name: title
+        label: Project Name
+        type: string
+        required: true
+      - name: status
+        label: Development Status
+        type: string
+        default: Concept
+      - name: lead
+        label: Project Lead / Team
+        type: string
+      - name: tools
+        label: Tools & Equipment Used (IDs)
+        type: list
+      - name: summary
+        label: Summary
+        type: string
+      - name: body
+        label: Detailed Content (Markdown)
+        type: rich-text
