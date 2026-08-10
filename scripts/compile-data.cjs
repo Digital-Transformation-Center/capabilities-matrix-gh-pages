@@ -14,6 +14,53 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
+// Process site domain configuration from site-config.json
+const siteConfigPath = path.join(rootDir, 'site-config.json');
+let siteConfig = {
+  githubPagesUrl: 'https://digital-transformation-center.github.io/capabilities-matrix-gh-pages/',
+  netlifyUrl: 'https://dtc-modelshop-capabilities.netlify.app/'
+};
+
+if (fs.existsSync(siteConfigPath)) {
+  try {
+    const rawConfig = fs.readFileSync(siteConfigPath, 'utf8');
+    siteConfig = { ...siteConfig, ...JSON.parse(rawConfig) };
+  } catch (err) {
+    console.warn('⚠️ Could not parse site-config.json:', err.message);
+  }
+}
+
+// Generate public/site-config.js for browser runtime
+const publicDir = path.join(rootDir, 'public');
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
+}
+const siteConfigJsPath = path.join(publicDir, 'site-config.js');
+const siteConfigJsContent = `// Auto-generated from site-config.json during build\nwindow.SITE_CONFIG = ${JSON.stringify(siteConfig, null, 2)};\n`;
+fs.writeFileSync(siteConfigJsPath, siteConfigJsContent, 'utf8');
+console.log('⚙️ Populated public/site-config.js from site-config.json');
+
+// Auto-update site_url in admin/config.yml
+const adminConfigYamlPath = path.join(rootDir, 'admin', 'config.yml');
+if (fs.existsSync(adminConfigYamlPath)) {
+  let yamlContent = fs.readFileSync(adminConfigYamlPath, 'utf8');
+  const siteUrlRegex = /^site_url:.*$/m;
+  const newSiteUrlLine = `site_url: "${siteConfig.githubPagesUrl}"`;
+  if (siteUrlRegex.test(yamlContent)) {
+    yamlContent = yamlContent.replace(siteUrlRegex, newSiteUrlLine);
+  }
+  fs.writeFileSync(adminConfigYamlPath, yamlContent, 'utf8');
+}
+
+// Ensure admin files are copied to public/admin for Vite build output
+const adminSrc = path.join(rootDir, 'admin');
+const adminPublic = path.join(rootDir, 'public', 'admin');
+if (fs.existsSync(adminSrc)) {
+  fs.mkdirSync(adminPublic, { recursive: true });
+  fs.cpSync(adminSrc, adminPublic, { recursive: true });
+  console.log('📁 Synced /admin directory to /public/admin for build output.');
+}
+
 // Helper to safely list markdown files in a subfolder
 function getMdFiles(subDir) {
   const targetDir = path.join(contentDir, subDir);
@@ -48,15 +95,6 @@ function parseDimensions(dim) {
     }
   }
   return null;
-}
-
-// Ensure admin files are copied to public/admin for Vite build output
-const adminSrc = path.join(rootDir, 'admin');
-const adminPublic = path.join(rootDir, 'public', 'admin');
-if (fs.existsSync(adminSrc)) {
-  fs.mkdirSync(adminPublic, { recursive: true });
-  fs.cpSync(adminSrc, adminPublic, { recursive: true });
-  console.log('📁 Synced /admin directory to /public/admin for build output.');
 }
 
 // 1. Read Capabilities
