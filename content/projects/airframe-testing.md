@@ -22,14 +22,14 @@ summary: A custom structural test fixture constructed using DTC Model Shop rapid
 
 ## Related Items
 
-### :material-wrench: Tools & Equipment Used
+### <i data-lucide="wrench"></i> Tools & Equipment Used
 - **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.
 - **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.
 - **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.
 - **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.
 - **[Digital Image Correlation (DIC) Optical System](../tools/dic-camera-system.md)** (Measurement & Metrology) - High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.
 
-### :material-shape-plus: Capabilities Supported
+### <i data-lucide="layers"></i> Capabilities Supported
 - **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.
 - **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.
 - **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.

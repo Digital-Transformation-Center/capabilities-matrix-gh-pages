@@ -40,9 +40,45 @@ const siteConfigJsContent = `// Auto-generated from site-config.json during buil
 fs.writeFileSync(siteConfigJsPath, siteConfigJsContent, 'utf8');
 console.log('⚙️ Populated public/site-config.js from site-config.json');
 
+// Auto-update site_url in admin/config.yml
+const adminConfigYamlPath = path.join(rootDir, 'admin', 'config.yml');
+if (fs.existsSync(adminConfigYamlPath)) {
+  let yamlContent = fs.readFileSync(adminConfigYamlPath, 'utf8');
+  const siteUrlRegex = /^site_url:.*$/m;
+  const newSiteUrlLine = `site_url: "${siteConfig.githubPagesUrl}"`;
+  if (siteUrlRegex.test(yamlContent)) {
+    yamlContent = yamlContent.replace(siteUrlRegex, newSiteUrlLine);
+  }
+  fs.writeFileSync(adminConfigYamlPath, yamlContent, 'utf8');
+}
+
 // Generate content/site-config.js for MkDocs site output
 const contentSiteConfigJsPath = path.join(contentDir, 'site-config.js');
 fs.writeFileSync(contentSiteConfigJsPath, siteConfigJsContent, 'utf8');
+
+// Ensure admin files are copied to content/admin and public/admin for MkDocs/Vite build output
+const adminSrc = path.join(rootDir, 'admin');
+const adminContent = path.join(contentDir, 'admin');
+const adminPublic = path.join(rootDir, 'public', 'admin');
+if (fs.existsSync(adminSrc)) {
+  fs.mkdirSync(adminContent, { recursive: true });
+  fs.cpSync(adminSrc, adminContent, { recursive: true });
+  fs.mkdirSync(adminPublic, { recursive: true });
+  fs.cpSync(adminSrc, adminPublic, { recursive: true });
+  console.log('📁 Synced /admin directory to /content/admin for MkDocs build output.');
+}
+
+// Helper to format icon markup (Lucide or Material)
+function formatIconMarkup(iconStr) {
+  if (!iconStr) return '<i data-lucide="cpu"></i>';
+  let str = String(iconStr).trim();
+  if (str.startsWith(':') && str.endsWith(':')) return str;
+  if (str.includes('/')) {
+    str = str.replace(/\//g, '-');
+    return `:${str}:`;
+  }
+  return `<i data-lucide="${str}"></i>`;
+}
 
 // Helper to safely list markdown files in a subfolder
 function getMdFiles(subDir) {
@@ -239,7 +275,7 @@ Object.values(capabilitiesMap).forEach((cap) => {
   const relatedTools = cap.tools.map(tId => toolsMap[tId]).filter(Boolean);
   const relatedProjects = cap.projects.map(pId => projectsMap[pId]).filter(Boolean);
 
-  let section = `${LINK_HEADER_MARKER}\n\n### :material-wrench: Associated Tools & Equipment\n`;
+  let section = `${LINK_HEADER_MARKER}\n\n### <i data-lucide="wrench"></i> Associated Tools & Equipment\n`;
   if (relatedTools.length === 0) {
     section += '_No tools registered yet._\n\n';
   } else {
@@ -249,7 +285,7 @@ Object.values(capabilitiesMap).forEach((cap) => {
     section += '\n';
   }
 
-  section += `### :material-folder-outline: Active Demonstrator Projects\n`;
+  section += `### <i data-lucide="folder-kanban"></i> Active Demonstrator Projects\n`;
   if (relatedProjects.length === 0) {
     section += '_No active projects linked yet._\n\n';
   } else {
@@ -271,14 +307,14 @@ Object.values(toolsMap).forEach((tool) => {
   const parentCap = capabilitiesMap[tool.capabilityId];
   const relatedProjects = tool.projects.map(pId => projectsMap[pId]).filter(Boolean);
 
-  let section = `${LINK_HEADER_MARKER}\n\n### :material-shape-plus: Parent Capability\n`;
+  let section = `${LINK_HEADER_MARKER}\n\n### <i data-lucide="layers"></i> Parent Capability\n`;
   if (parentCap) {
     section += `- **[${parentCap.title}](../capabilities/${parentCap.id}.md)**: ${parentCap.summary}\n\n`;
   } else {
     section += '_No capability assigned._\n\n';
   }
 
-  section += `### :material-folder-outline: Demonstrator Projects Using This Tool\n`;
+  section += `### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool\n`;
   if (relatedProjects.length === 0) {
     section += '_Currently not assigned to any demonstrator projects._\n\n';
   } else {
@@ -300,7 +336,7 @@ Object.values(projectsMap).forEach((proj) => {
   const relatedTools = proj.tools.map(tId => toolsMap[tId]).filter(Boolean);
   const relatedCaps = proj.capabilities.map(cId => capabilitiesMap[cId]).filter(Boolean);
 
-  let section = `${LINK_HEADER_MARKER}\n\n### :material-wrench: Tools & Equipment Used\n`;
+  let section = `${LINK_HEADER_MARKER}\n\n### <i data-lucide="wrench"></i> Tools & Equipment Used\n`;
   if (relatedTools.length === 0) {
     section += '_No tools specified._\n\n';
   } else {
@@ -310,7 +346,7 @@ Object.values(projectsMap).forEach((proj) => {
     section += '\n';
   }
 
-  section += `### :material-shape-plus: Capabilities Supported\n`;
+  section += `### <i data-lucide="layers"></i> Capabilities Supported\n`;
   if (relatedCaps.length === 0) {
     section += '_No capabilities derived._\n\n';
   } else {

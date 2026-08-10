@@ -19,10 +19,10 @@ The Rapid Prototyping capability allows users to quickly create physical compone
 
 ## Related Items
 
-### :material-wrench: Associated Tools & Equipment
+### <i data-lucide="wrench"></i> Associated Tools & Equipment
 - **[FDM 3D Printer Bank](../tools/fdm-3dp.md)**: High-resolution FDM 3D printer for rapid prototyping and small-scale production.
 
-### :material-folder-outline: Active Demonstrator Projects
+### <i data-lucide="folder-kanban"></i> Active Demonstrator Projects
 - **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_
 - **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_
 - **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_

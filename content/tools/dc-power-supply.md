@@ -20,10 +20,10 @@ Benchtop multi-channel programmable DC power supply used in the DTC Model Shop t
 
 ## Related Items
 
-### :material-shape-plus: Parent Capability
+### <i data-lucide="layers"></i> Parent Capability
 - **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.
 
-### :material-folder-outline: Demonstrator Projects Using This Tool
+### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool
 - **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_
 - **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_
 - **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_

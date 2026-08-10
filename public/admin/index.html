@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DTC Model Shop CMS - Content Manager</title>
+  
+  <!-- Load domain configuration -->
+  <script src="/site-config.js"></script>
+  
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* Clean Login Screen DTC Branding */
+    section[class*="AuthenticationPage"]::before,
+    div[class*="AuthenticationPage"]::before {
+      content: "";
+      display: block;
+      width: 280px;
+      height: 75px;
+      margin: 0 auto 1.5rem auto;
+      background-image: url('dtc-logo-primary.png'), url('../dtc-logo-primary.png'), url('/dtc-logo-primary.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+
+    // MutationObserver to replace Netlify Identity button text with "Login to DTC Model Shop CMS"
+    const updateButtonText = () => {
+      const targetText = "Login to DTC Model Shop CMS";
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(btn => {
+        if (btn.textContent && (btn.textContent.includes('Netlify Identity') || btn.textContent.includes('Login with') || btn.textContent.includes('Log in with'))) {
+          btn.textContent = targetText;
+        }
+      });
+    };
+
+    const observer = new MutationObserver(updateButtonText);
+    document.addEventListener("DOMContentLoaded", () => {
+      observer.observe(document.body, { childList: true, subtree: true });
+      setInterval(updateButtonText, 300);
+    });
+
+    // Enable Manual Initialization for Local Mock Mode
+    window.CMS_MANUAL_INIT = true;
+  </script>
+
+  <!-- Load Decap CMS Default Entrypoint -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Local Dev Mode: Auto-authenticate as mock user for testing UI without Netlify login
+    const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+
+    if (window.CMS) {
+      if (isLocal) {
+        window.CMS.init({
+          config: {
+            backend: { name: 'test-repo' },
+            local_backend: true,
+            display_url: window.location.origin,
+            media_folder: 'public/uploads',
+            public_folder: '/uploads'
+          }
+        });
+      } else {
+        window.CMS.init();
+      }
+    }
+  </script>
+</body>
+</html>

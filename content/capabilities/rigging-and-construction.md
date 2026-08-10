@@ -18,10 +18,10 @@ Provides the framework for portable and adaptable physical prototypes. The Riggi
 
 ## Related Items
 
-### :material-wrench: Associated Tools & Equipment
+### <i data-lucide="wrench"></i> Associated Tools & Equipment
 - **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)**: 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.
 
-### :material-folder-outline: Active Demonstrator Projects
+### <i data-lucide="folder-kanban"></i> Active Demonstrator Projects
 - **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_
 - **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_
 - **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_

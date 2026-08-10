@@ -20,9 +20,9 @@ Precision radiometric infrared camera used in the DTC Model Shop for real-time t
 
 ## Related Items
 
-### :material-shape-plus: Parent Capability
+### <i data-lucide="layers"></i> Parent Capability
 - **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.
 
-### :material-folder-outline: Demonstrator Projects Using This Tool
+### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool
 - **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_
 - **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_

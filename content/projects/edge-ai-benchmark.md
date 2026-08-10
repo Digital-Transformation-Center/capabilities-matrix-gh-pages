@@ -24,7 +24,7 @@ summary: An actively cooled, sensorized test rack for benchmarking low-power edg
 
 ## Related Items
 
-### :material-wrench: Tools & Equipment Used
+### <i data-lucide="wrench"></i> Tools & Equipment Used
 - **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.
 - **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.
 - **[PCB CNC Milling & Prototyping Station](../tools/pcb-fabrication.md)** (Physical Machinery) - Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.
@@ -33,7 +33,7 @@ summary: An actively cooled, sensorized test rack for benchmarking low-power edg
 - **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.
 - **[High-Resolution Thermal Imaging Camera](../tools/thermal-camera.md)** (Measurement & Metrology) - Non-contact infrared thermal camera for full-field heat mapping, thermal throttling analysis, and PCB hot-spot inspection.
 
-### :material-shape-plus: Capabilities Supported
+### <i data-lucide="layers"></i> Capabilities Supported
 - **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.
 - **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.
 - **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.

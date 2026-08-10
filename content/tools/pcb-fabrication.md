@@ -20,10 +20,10 @@ High-precision desktop CNC milling machine used in the DTC Model Shop for rapid 
 
 ## Related Items
 
-### :material-shape-plus: Parent Capability
+### <i data-lucide="layers"></i> Parent Capability
 - **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.
 
-### :material-folder-outline: Demonstrator Projects Using This Tool
+### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool
 - **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_
 - **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_
 - **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_

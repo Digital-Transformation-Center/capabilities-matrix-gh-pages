@@ -24,7 +24,7 @@ summary: Custom 3D-printed quick-change end-effectors and vision-guided tooling 
 
 ## Related Items
 
-### :material-wrench: Tools & Equipment Used
+### <i data-lucide="wrench"></i> Tools & Equipment Used
 - **[Benchtop Collaborative Robot Arm](../tools/cobot-arm.md)** (Robotic Equipment) - Compact 6-axis collaborative robot arm with integrated safety sensors for automated manipulation, assembly, and tool-changing experiments.
 - **[Robotic Vision & Positioning Camera System](../tools/smart-vision-system.md)** (Sensor / Vision System) - Industrial smart camera system for robot guidance, 2D/3D part positioning, and automated inspection alignment.
 - **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.
@@ -33,7 +33,7 @@ summary: Custom 3D-printed quick-change end-effectors and vision-guided tooling 
 - **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.
 - **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.
 
-### :material-shape-plus: Capabilities Supported
+### <i data-lucide="layers"></i> Capabilities Supported
 - **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.
 - **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.
 - **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.

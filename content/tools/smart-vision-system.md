@@ -20,8 +20,8 @@ Compact 2D/3D industrial vision sensor used in the DTC Model Shop for guiding ro
 
 ## Related Items
 
-### :material-shape-plus: Parent Capability
+### <i data-lucide="layers"></i> Parent Capability
 - **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.
 
-### :material-folder-outline: Demonstrator Projects Using This Tool
+### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool
 - **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_

@@ -22,14 +22,14 @@ summary: Automatically manipulate composite material samples while using microsc
 
 ## Related Items
 
-### :material-wrench: Tools & Equipment Used
+### <i data-lucide="wrench"></i> Tools & Equipment Used
 - **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.
 - **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.
 - **[Digital Image Correlation (DIC) Optical System](../tools/dic-camera-system.md)** (Measurement & Metrology) - High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.
 - **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.
 - **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.
 
-### :material-shape-plus: Capabilities Supported
+### <i data-lucide="layers"></i> Capabilities Supported
 - **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.
 - **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.
 - **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.

@@ -20,9 +20,9 @@ Stereoscopic optical metrology tool used in the DTC Model Shop to capture high-s
 
 ## Related Items
 
-### :material-shape-plus: Parent Capability
+### <i data-lucide="layers"></i> Parent Capability
 - **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.
 
-### :material-folder-outline: Demonstrator Projects Using This Tool
+### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool
 - **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_
 - **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_

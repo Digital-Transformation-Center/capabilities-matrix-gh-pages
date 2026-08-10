@@ -19,13 +19,13 @@ The Metrology & Inspection capability provides users with precise optical and di
 
 ## Related Items
 
-### :material-wrench: Associated Tools & Equipment
+### <i data-lucide="wrench"></i> Associated Tools & Equipment
 - **[Digital Image Correlation (DIC) Optical System](../tools/dic-camera-system.md)**: High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.
 - **[Digital Inspection Microscope](../tools/digital-microscope.md)**: High-magnification digital stereo microscope with integrated HD camera for optical surface inspection, solder joint validation, and micro-defect analysis.
 - **[Metrology-Grade Structured Light 3D Scanner](../tools/structured-light-scanner.md)**: High-precision structured light 3D scanner for detailed surface measurement and inspection applications.
 - **[High-Resolution Thermal Imaging Camera](../tools/thermal-camera.md)**: Non-contact infrared thermal camera for full-field heat mapping, thermal throttling analysis, and PCB hot-spot inspection.
 
-### :material-folder-outline: Active Demonstrator Projects
+### <i data-lucide="folder-kanban"></i> Active Demonstrator Projects
 - **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_
 - **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_
 - **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_

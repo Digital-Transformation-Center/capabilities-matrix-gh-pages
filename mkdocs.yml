@@ -35,6 +35,7 @@ extra_css:
 extra_javascript:
   - site-config.js
   - matrix-interactive.js
+  - https://unpkg.com/lucide@latest
 
 plugins:
   - search

@@ -19,13 +19,13 @@ Assemble and test electronic components and circuits for prototyping and product
 
 ## Related Items
 
-### :material-wrench: Associated Tools & Equipment
+### <i data-lucide="wrench"></i> Associated Tools & Equipment
 - **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)**: Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.
 - **[Oscilloscope](../tools/oscilloscope.md)**: High-precision oscilloscope for analyzing electronic signals and waveforms.
 - **[PCB CNC Milling & Prototyping Station](../tools/pcb-fabrication.md)**: Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.
 - **[Soldering & Rework Station](../tools/soldering.md)**: Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.
 
-### :material-folder-outline: Active Demonstrator Projects
+### <i data-lucide="folder-kanban"></i> Active Demonstrator Projects
 - **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_
 - **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_
 - **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_

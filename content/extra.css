@@ -46,12 +46,13 @@
   color: #ef4444 !important;
 }
 
-/* Mono-tone Inline SVG Icons */
-.twemoji svg {
-  width: 1.1em !important;
-  height: 1.1em !important;
-  fill: currentColor !important;
-  vertical-align: -0.15em !important;
+/* Mono-tone Inline SVG Icons & Lucide Icons */
+.twemoji svg,
+.lucide {
+  width: 1.15em !important;
+  height: 1.15em !important;
+  stroke-width: 2px !important;
+  vertical-align: -0.18em !important;
   display: inline-block;
 }
 

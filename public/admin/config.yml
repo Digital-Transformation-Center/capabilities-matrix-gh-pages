@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: "https://digital-transformation-center.github.io/capabilities-matrix-gh-pages/"
+
+collections:
+  - name: "capabilities"
+    label: "Capabilities"
+    label_singular: "Capability"
+    folder: "content/capabilities"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: true
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier (slug) used for referencing in tools" }
+      - { label: "Capability Name", name: "title", widget: "string" }
+      - { label: "Category / Impact Area", name: "category", widget: "string", required: false, hint: "e.g. Validation, Construction, Prototyping" }
+      - { label: "Icon Identifier", name: "icon", widget: "string", required: false, default: "cpu", hint: "Enter any Lucide icon name (e.g. cpu, bot, eye, printer, wrench, microscope, activity, gauge, shield). Browse 1,500+ clean icons at: https://lucide.dev/icons/" }
+      - { label: "Badge Color", name: "color", widget: "color", required: false, default: "#3B82F6", hint: "Select a badge accent color using the color picker" }
+      - { label: "Broad Description / Summary", name: "summary", widget: "text", required: false }
+      - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }
+
+  - name: "tools"
+    label: "Tools & Equipment"
+    label_singular: "Tool"
+    folder: "content/tools"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: true
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier matching tool filename" }
+      - { label: "Tool Name", name: "title", widget: "string" }
+      - { label: "Capability Area (ID)", name: "capability", widget: "string", hint: "ID of capability (e.g. electronic-assembly)" }
+      - { label: "Classification / Type", name: "type", widget: "string", required: false }
+      - { label: "Dimensions / Footprint", name: "dimensions", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }
+
+  - name: "projects"
+    label: "Demonstrator Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: true
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string" }
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Development Status", name: "status", widget: "select", options: ["Concept", "Early Development", "Active Prototyping", "Completed", "Archived"], default: "Concept" }
+      - { label: "Team Lead", name: "lead", widget: "string", required: false }
+      - { label: "Tools Used (IDs)", name: "tools", widget: "list", required: false }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }

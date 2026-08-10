@@ -20,9 +20,9 @@ Compact 6-axis collaborative robot arm used in the DTC Model Shop for prototypin
 
 ## Related Items
 
-### :material-shape-plus: Parent Capability
+### <i data-lucide="layers"></i> Parent Capability
 - **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.
 
-### :material-folder-outline: Demonstrator Projects Using This Tool
+### <i data-lucide="folder-kanban"></i> Demonstrator Projects Using This Tool
 - **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_
 - **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_

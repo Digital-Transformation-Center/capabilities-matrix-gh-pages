@@ -24,7 +24,7 @@ summary: A robotic arm fitted with a custom end effector and vision system to pe
 
 ## Related Items
 
-### :material-wrench: Tools & Equipment Used
+### <i data-lucide="wrench"></i> Tools & Equipment Used
 - **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.
 - **[Benchtop Collaborative Robot Arm](../tools/cobot-arm.md)** (Robotic Equipment) - Compact 6-axis collaborative robot arm with integrated safety sensors for automated manipulation, assembly, and tool-changing experiments.
 - **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.
@@ -33,7 +33,7 @@ summary: A robotic arm fitted with a custom end effector and vision system to pe
 - **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.
 - **[Metrology-Grade Structured Light 3D Scanner](../tools/structured-light-scanner.md)** (Measurement & Metrology) - High-precision structured light 3D scanner for detailed surface measurement and inspection applications.
 
-### :material-shape-plus: Capabilities Supported
+### <i data-lucide="layers"></i> Capabilities Supported
 - **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.
 - **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.
 - **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.
