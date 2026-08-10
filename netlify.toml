@@ -1,0 +1,8 @@
+# Netlify Configuration for DTC Capabilities Matrix
+
+[build]
+  command = "node scripts/compile-data.cjs"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "20"

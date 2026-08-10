@@ -8,7 +8,8 @@
     "predev": "node scripts/compile-data.cjs",
     "prebuild": "node scripts/compile-data.cjs",
     "serve": "node scripts/compile-data.cjs && .venv\\Scripts\\python.exe -m mkdocs serve",
-    "build": "node scripts/compile-data.cjs && .venv\\Scripts\\python.exe -m mkdocs build",
+    "build": "node scripts/compile-data.cjs",
+    "build:local": "node scripts/compile-data.cjs && .venv\\Scripts\\python.exe -m mkdocs build",
     "build:vite": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
