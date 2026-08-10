@@ -1,0 +1,66 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Folder where user uploaded media files are saved
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Display site link in CMS header
+site_url: "https://digital-transformation-center.github.io/capabilities-matrix-gh-pages/"
+
+collections:
+  - name: "capabilities"
+    label: "Capabilities"
+    label_singular: "Capability"
+    folder: "content/capabilities"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: true
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier (slug) used for referencing in tools" }
+      - { label: "Capability Name", name: "title", widget: "string" }
+      - { label: "Category / Impact Area", name: "category", widget: "string", required: false, hint: "e.g. Validation, Construction, Prototyping" }
+      - { label: "Icon", name: "icon", widget: "string", required: false, default: "Cpu", hint: "Lucide icon name (e.g. Scan, Cpu, CircuitBoard, Wrench)" }
+      - { label: "Color", name: "color", widget: "string", required: false, default: "#3B82F6", hint: "Hex color code (e.g. #3B82F6)" }
+      - { label: "Broad Description / Summary", name: "summary", widget: "text", required: false }
+      - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }
+
+  - name: "tools"
+    label: "Tools"
+    label_singular: "Tool"
+    folder: "content/tools"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: true
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier (slug) used for referencing in projects" }
+      - { label: "Tool Name", name: "title", widget: "string" }
+      - { label: "Associated Capability", name: "capability", widget: "relation", collection: "capabilities", search_fields: ["title", "id"], value_field: "id", display_fields: ["title"], required: false }
+      - { label: "Category / Type", name: "type", widget: "select", options: ["Physical Tool", "Equipment / Tool", "Hardware", "Software", "Digital System"], default: "Physical Tool", required: false }
+      - { label: "Cost / License Tier / Dimensions", name: "dimensions", widget: "string", required: false, hint: "e.g. 600 x 500 x 300 or Tier 1 / Open Source" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description / Summary", name: "summary", widget: "text", required: false }
+      - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }
+
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    editor:
+      preview: true
+    fields:
+      - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier (slug)" }
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Status", name: "status", widget: "select", options: ["Concept", "Active", "In Progress", "Completed", "Archived"], default: "Active", required: false }
+      - { label: "Project Lead", name: "lead", widget: "string", required: false, default: "DTC Team" }
+      - { label: "Associated Tools", name: "tools", widget: "relation", collection: "tools", search_fields: ["title", "id"], value_field: "id", display_fields: ["title"], multiple: true, required: false }
+      - { label: "Description / Summary", name: "summary", widget: "text", required: false }
+      - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }

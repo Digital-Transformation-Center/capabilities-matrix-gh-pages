@@ -50,6 +50,15 @@ function parseDimensions(dim) {
   return null;
 }
 
+// Ensure admin files are copied to public/admin for Vite build output
+const adminSrc = path.join(rootDir, 'admin');
+const adminPublic = path.join(rootDir, 'public', 'admin');
+if (fs.existsSync(adminSrc)) {
+  fs.mkdirSync(adminPublic, { recursive: true });
+  fs.cpSync(adminSrc, adminPublic, { recursive: true });
+  console.log('📁 Synced /admin directory to /public/admin for build output.');
+}
+
 // 1. Read Capabilities
 const capabilityFiles = getMdFiles('capabilities');
 const capabilitiesMap = {};
@@ -57,15 +66,11 @@ const capabilitiesMap = {};
 capabilityFiles.forEach(({ fileName, fullPath, relativePath }) => {
   const rawContent = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(rawContent);
+  const id = data.id || fileName.replace(/\.md$/, '');
 
-  if (!data.id) {
-    console.warn(`⚠️ Warning: Capability file ${fileName} is missing 'id' in frontmatter.`);
-    return;
-  }
-
-  capabilitiesMap[data.id] = {
-    id: data.id,
-    title: data.title || data.id,
+  capabilitiesMap[id] = {
+    id: id,
+    title: data.title || id,
     icon: data.icon || 'Cpu',
     color: data.color || '#3B82F6',
     category: data.category || 'General Capability',
@@ -84,15 +89,11 @@ const toolsMap = {};
 toolFiles.forEach(({ fileName, fullPath, relativePath }) => {
   const rawContent = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(rawContent);
-
-  if (!data.id) {
-    console.warn(`⚠️ Warning: Tool file ${fileName} is missing 'id' in frontmatter.`);
-    return;
-  }
+  const id = data.id || fileName.replace(/\.md$/, '');
 
   const toolObj = {
-    id: data.id,
-    title: data.title || data.id,
+    id: id,
+    title: data.title || id,
     capabilityId: data.capability || '',
     type: data.type || 'Equipment / Tool',
     dimensions: parseDimensions(data.dimensions || data.footprint),
@@ -103,13 +104,13 @@ toolFiles.forEach(({ fileName, fullPath, relativePath }) => {
     projects: []
   };
 
-  toolsMap[data.id] = toolObj;
+  toolsMap[id] = toolObj;
 
   // Add tool reference to capability
   if (data.capability && capabilitiesMap[data.capability]) {
-    capabilitiesMap[data.capability].tools.push(data.id);
+    capabilitiesMap[data.capability].tools.push(id);
   } else if (data.capability) {
-    console.warn(`⚠️ Tool '${data.id}' references unknown capability '${data.capability}'`);
+    console.warn(`⚠️ Tool '${id}' references unknown capability '${data.capability}'`);
   }
 });
 
@@ -120,11 +121,7 @@ const projectsMap = {};
 projectFiles.forEach(({ fileName, fullPath, relativePath }) => {
   const rawContent = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(rawContent);
-
-  if (!data.id) {
-    console.warn(`⚠️ Warning: Project file ${fileName} is missing 'id' in frontmatter.`);
-    return;
-  }
+  const id = data.id || fileName.replace(/\.md$/, '');
 
   const toolIds = Array.isArray(data.tools) ? data.tools : [];
   const derivedCapabilityIds = new Set();
@@ -132,25 +129,25 @@ projectFiles.forEach(({ fileName, fullPath, relativePath }) => {
   toolIds.forEach(tId => {
     if (toolsMap[tId]) {
       // Link project to tool
-      toolsMap[tId].projects.push(data.id);
+      toolsMap[tId].projects.push(id);
 
       // Extract capability from tool
       const capId = toolsMap[tId].capabilityId;
       if (capId && capabilitiesMap[capId]) {
         derivedCapabilityIds.add(capId);
         // Link project to capability
-        if (!capabilitiesMap[capId].projects.includes(data.id)) {
-          capabilitiesMap[capId].projects.push(data.id);
+        if (!capabilitiesMap[capId].projects.includes(id)) {
+          capabilitiesMap[capId].projects.push(id);
         }
       }
     } else {
-      console.warn(`⚠️ Project '${data.id}' references unknown tool '${tId}'`);
+      console.warn(`⚠️ Project '${id}' references unknown tool '${tId}'`);
     }
   });
 
-  projectsMap[data.id] = {
-    id: data.id,
-    title: data.title || data.id,
+  projectsMap[id] = {
+    id: id,
+    title: data.title || id,
     status: data.status || 'Active',
     lead: data.lead || 'DTC Team',
     tools: toolIds,
@@ -170,3 +167,4 @@ const outputData = {
 
 fs.writeFileSync(outputFile, JSON.stringify(outputData, null, 2), 'utf8');
 console.log(`✅ Matrix Data compiled successfully! (${outputData.capabilities.length} capabilities, ${outputData.tools.length} tools, ${outputData.projects.length} projects)`);
+

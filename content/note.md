@@ -1,0 +1,5 @@
+- Track small/large companies
+- Filter customer-proposed
+- Fixturing table
+- A10
+- Precision comparisons     
