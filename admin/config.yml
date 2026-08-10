@@ -23,7 +23,24 @@ collections:
       - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier (slug) used for referencing in tools" }
       - { label: "Capability Name", name: "title", widget: "string" }
       - { label: "Category / Impact Area", name: "category", widget: "string", required: false, hint: "e.g. Validation, Construction, Prototyping" }
-      - { label: "Icon", name: "icon", widget: "string", required: false, default: "Cpu", hint: "Lucide icon name (e.g. Scan, Cpu, CircuitBoard, Wrench)" }
+      - label: "Icon"
+        name: "icon"
+        widget: "select"
+        required: false
+        default: "material/chip"
+        options:
+          - { label: "Chip / Microcontroller (material/chip)", value: "material/chip" }
+          - { label: "Eye / Inspection (material/eye-outline)", value: "material/eye-outline" }
+          - { label: "3D Printer / Fabrication (material/printer-3d)", value: "material/printer-3d" }
+          - { label: "Hammer & Wrench / Construction (material/hammer-wrench)", value: "material/hammer-wrench" }
+          - { label: "Robot / Automation (material/robot)", value: "material/robot" }
+          - { label: "CPU / Electronics (material/cpu-64-bit)", value: "material/cpu-64-bit" }
+          - { label: "Cog / Engineering (material/cog-outline)", value: "material/cog-outline" }
+          - { label: "Toolbox (material/toolbox-outline)", value: "material/toolbox-outline" }
+          - { label: "Scanner / Optical (material/barcode-scan)", value: "material/barcode-scan" }
+          - { label: "Camera / Vision (material/camera-outline)", value: "material/camera-outline" }
+          - { label: "Gauge / Metrology (material/gauge)", value: "material/gauge" }
+          - { label: "Wrench / Maintenance (material/wrench-outline)", value: "material/wrench-outline" }
       - { label: "Color", name: "color", widget: "string", required: false, default: "#3B82F6", hint: "Hex color code (e.g. #3B82F6)" }
       - { label: "Broad Description / Summary", name: "summary", widget: "text", required: false }
       - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }

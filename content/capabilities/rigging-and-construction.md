@@ -1,7 +1,7 @@
 ---
 id: rigging-and-construction
 title: Rigging & Construction
-icon: Drill
+icon: material/hammer-wrench
 color: "#b74949"
 category: Construction
 summary: Rigid mounting frames, modular components, and prototyping platforms.
@@ -15,3 +15,16 @@ Provides the framework for portable and adaptable physical prototypes. The Riggi
 - Aluminum T-Slot fabrication (cutting, drilling).
 - Readily-available assembly components (screws, nuts, brackets).
 - Carbon fiber construction.
+
+## Related Items
+
+### :material-wrench: Associated Tools & Equipment
+- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)**: 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.
+
+### :material-folder-outline: Active Demonstrator Projects
+- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_
+- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_
+- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_
+- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_
+- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_
+- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_

@@ -16,3 +16,11 @@ High-precision structured light 3D scanner for detailed surface measurement and 
 - High-resolution 3D scanning capabilities for accurate surface characterization.
 - Real-time data processing and analysis for efficient quality control.
 - Integration with metrology software for comprehensive reporting and documentation.
+
+## Related Items
+
+### :material-shape-plus: Parent Capability
+- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.
+
+### :material-folder-outline: Demonstrator Projects Using This Tool
+- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_

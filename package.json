@@ -7,8 +7,9 @@
     "compile": "node scripts/compile-data.cjs",
     "predev": "node scripts/compile-data.cjs",
     "prebuild": "node scripts/compile-data.cjs",
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "serve": "node scripts/compile-data.cjs && .venv\\Scripts\\python.exe -m mkdocs serve",
+    "build": "node scripts/compile-data.cjs && .venv\\Scripts\\python.exe -m mkdocs build",
+    "build:vite": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },

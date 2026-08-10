@@ -30,19 +30,30 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install Node Dependencies
         run: npm ci
 
-      - name: Build Site & Compile Markdown
-        run: npm run build
+      - name: Compile Data & Sync CRM Admin Portal
+        run: npm run compile
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs & Material Theme
+        run: pip install mkdocs-material
+
+      - name: Build MkDocs Site
+        run: mkdocs build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './site'
 
       - name: Deploy to GitHub Pages
         id: deployment

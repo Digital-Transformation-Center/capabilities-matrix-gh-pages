@@ -1,0 +1,146 @@
+/* DTC MkDocs Custom Theme Overrides - Clean Slate Dark Aesthetic */
+
+:root {
+  --md-primary-fg-color: #051d49;
+  --md-primary-fg-color--light: #0d2b68;
+  --md-primary-fg-color--dark: #020f28;
+  --md-accent-fg-color: #ef4444;
+
+  --md-default-bg-color: #0f172a;
+  --md-default-fg-color: #f8fafc;
+  --md-default-fg-color--light: #cbd5e1;
+  --md-default-fg-color--lighter: #94a3b8;
+
+  --md-code-bg-color: #1e293b;
+  --md-code-fg-color: #38bdf8;
+
+  --md-typeset-a-color: #38bdf8;
+}
+
+/* Link & Hover Styling (Light Blue Links, Red Hover matching main DTC site) */
+.md-typeset a:not(.md-button):not(.header-crm-login) {
+  color: #38bdf8 !important;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.md-typeset a:not(.md-button):not(.header-crm-login):hover,
+.md-typeset a:not(.md-button):not(.header-crm-login):focus {
+  color: #ef4444 !important;
+  text-decoration: underline;
+}
+
+.md-typeset table td a,
+.md-typeset table th a {
+  color: #38bdf8 !important;
+}
+
+.md-typeset table td a:hover,
+.md-typeset table th a:hover {
+  color: #ef4444 !important;
+}
+
+.md-nav__link:hover {
+  color: #ef4444 !important;
+}
+
+/* Mono-tone Inline SVG Icons */
+.twemoji svg {
+  width: 1.1em !important;
+  height: 1.1em !important;
+  fill: currentColor !important;
+  vertical-align: -0.15em !important;
+  display: inline-block;
+}
+
+/* Uniform Button Styling Across Entire Site */
+.md-button,
+.header-crm-login,
+button.md-button,
+a.md-button {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid #0369a1 !important;
+  border-radius: 0px !important;
+  padding: 0.55rem 1.25rem !important;
+  font-size: 0.85rem !important;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.md-button:hover,
+.md-button:focus,
+.header-crm-login:hover,
+.header-crm-login:focus,
+button.md-button:hover,
+a.md-button:hover {
+  background-color: #0369a1 !important;
+  border-color: #38bdf8 !important;
+  color: #ffffff !important;
+}
+
+/* Header CRM Login Button positioning */
+.header-crm-login {
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.8rem !important;
+  margin-left: auto;
+  margin-right: 0.75rem;
+  border-color: #38bdf8 !important;
+}
+
+/* Enforce 0px rounded corners across all components */
+*, *::before, *::after,
+.md-header,
+.md-tabs,
+.md-card,
+.md-typeset table,
+.md-typeset pre,
+.md-typeset code,
+.md-button,
+.md-search__form,
+.md-search__output,
+.md-nav__link {
+  border-radius: 0px !important;
+}
+
+/* Header & Navigation Styling */
+.md-header {
+  background-color: #051d49 !important;
+  border-bottom: 1px solid #334155;
+}
+
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.md-tabs {
+  background-color: #0a255c !important;
+  border-bottom: 1px solid #334155;
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #051d49;
+  color: #ffffff;
+  font-weight: 600;
+  border: 1px solid #334155;
+  padding: 0.6rem 0.8rem;
+}
+
+.md-typeset table:not([class]) td {
+  border: 1px solid #334155;
+  padding: 0.6rem 0.8rem;
+}

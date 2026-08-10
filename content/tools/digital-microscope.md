@@ -17,3 +17,11 @@ High-magnification digital optical microscope used in the DTC Model Shop for non
 - Dimmable LED ring illumination for glare-free surface and feature inspection.
 - Real-time video output and image capture for micro-defect documentation and layer analysis.
 - Adjustable boom stand adaptable to desktop 3D printers, PCB workbenches, and inspection fixtures.
+
+## Related Items
+
+### :material-shape-plus: Parent Capability
+- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.
+
+### :material-folder-outline: Demonstrator Projects Using This Tool
+- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_

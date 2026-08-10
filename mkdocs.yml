@@ -1,0 +1,76 @@
+site_name: DTC Model Shop Matrix
+site_url: https://digital-transformation-center.github.io/capabilities-matrix-gh-pages/
+site_description: Digital Transformation Center Model Shop - Interactive Capabilities, Tools, and Demonstrator Projects Matrix
+
+docs_dir: content
+
+theme:
+  name: material
+  logo: dtc-logo-primary.png
+  favicon: dtc-logo-icon.png
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: red
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - extra.css
+
+extra_javascript:
+  - site-config.js
+  - matrix-interactive.js
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - tables
+
+nav:
+  - Home / Matrix: index.md
+  - Capabilities:
+    - Overview: capabilities/index.md
+    - Electronic Assembly: capabilities/electronic-assembly.md
+    - Metrology & Inspection: capabilities/metrology-and-inspection.md
+    - Rapid Prototyping: capabilities/rapid-prototyping.md
+    - Rigging & Construction: capabilities/rigging-and-construction.md
+    - Robotics & Automation: capabilities/robotics-and-automation.md
+  - Tools:
+    - Overview: tools/index.md
+    - Cobot Arm: tools/cobot-arm.md
+    - DC Power Supply: tools/dc-power-supply.md
+    - DIC Camera System: tools/dic-camera-system.md
+    - Digital Microscope: tools/digital-microscope.md
+    - FDM 3D Printer: tools/fdm-3dp.md
+    - Metal Chop Saw: tools/metal-chop-saw.md
+    - Oscilloscope: tools/oscilloscope.md
+    - PCB Fabrication: tools/pcb-fabrication.md
+    - Smart Vision System: tools/smart-vision-system.md
+    - Soldering & Rework: tools/soldering.md
+    - Structured Light Scanner: tools/structured-light-scanner.md
+    - Thermal Camera: tools/thermal-camera.md
+  - Projects:
+    - Overview: projects/index.md
+    - Airframe Testing: projects/airframe-testing.md
+    - AM Metrology: projects/am-metrology.md
+    - Automated Paint Twin: projects/automated-paint-twin.md
+    - Cobot Maintenance: projects/cobot-maintenance.md
+    - Edge AI Benchmark: projects/edge-ai-benchmark.md
+    - Microscale Inspector: projects/microscale-inspector.md
+    - MOSA Payload Pod: projects/mosa-payload-pod.md
+    - Threat Detection Pod: projects/threat-detection-pod.md
