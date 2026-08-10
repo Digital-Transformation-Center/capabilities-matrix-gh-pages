@@ -33,7 +33,7 @@ jobs:
       - name: Install Node Dependencies
         run: npm ci
 
-      - name: Compile Data & Sync CRM Admin Portal
+      - name: Compile Data & Sync CMS Admin Portal
         run: npm run compile
 
       - name: Setup Python

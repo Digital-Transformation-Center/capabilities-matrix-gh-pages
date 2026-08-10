@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DTC Model Shop CRM - Content Manager</title>
+  <title>DTC Model Shop CMS - Content Manager</title>
   
   <!-- Load domain configuration -->
   <script src="/site-config.js"></script>
@@ -26,23 +26,21 @@
     }
 
     /* Hide Decap CMS default SVG logo */
-    div[class*="AuthenticationPage"] svg,
-    div[class*="IconWrapper"] svg,
-    div[class*="Logo-"] svg,
-    section[class*="AuthenticationPage"] svg {
+    [class*="AuthenticationPage"] svg,
+    [class*="IconWrapper"] svg,
+    [class*="Logo-"] svg {
       display: none !important;
     }
 
-    /* Display DTC Logo on CMS Auth Screen */
-    div[class*="AuthenticationPage"]::before,
+    /* Display single DTC Logo on CMS Auth Screen */
     section[class*="AuthenticationPage"]::before,
-    div[class*="IconWrapper"]::before {
+    div[class*="AuthenticationPage"]::before {
       content: "";
       display: block;
       width: 280px;
-      height: 70px;
-      margin: 0 auto 2rem auto;
-      background-image: url('/dtc-logo-primary.png');
+      height: 75px;
+      margin: 0 auto 1.5rem auto;
+      background-image: url('dtc-logo-primary.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -51,7 +49,8 @@
     /* Dark theme card styling for CMS Login box */
     div[class*="AuthenticationPage"] section,
     section[class*="AuthenticationPage"],
-    div[class*="Card-"] {
+    div[class*="Card-"],
+    div[class*="Card"] {
       background-color: #1e293b !important;
       border: 1px solid #334155 !important;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
@@ -99,9 +98,9 @@
       });
     }
 
-    // MutationObserver to replace Netlify Identity button text with "Login to DTC Model Shop CRM"
+    // MutationObserver to replace Netlify Identity button text with "Login to DTC Model Shop CMS"
     const updateButtonText = () => {
-      const targetText = "Login to DTC Model Shop CRM";
+      const targetText = "Login to DTC Model Shop CMS";
       
       // Update DOM buttons inside Decap CMS
       const buttons = document.querySelectorAll('button');

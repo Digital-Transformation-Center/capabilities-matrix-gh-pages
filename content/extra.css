@@ -18,13 +18,13 @@
 }
 
 /* Link & Hover Styling (Light Blue Links, Red Hover matching main DTC site) */
-.md-typeset a:not(.md-button):not(.header-crm-login) {
+.md-typeset a:not(.md-button) {
   color: #38bdf8 !important;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-.md-typeset a:not(.md-button):not(.header-crm-login):hover,
-.md-typeset a:not(.md-button):not(.header-crm-login):focus {
+.md-typeset a:not(.md-button):hover,
+.md-typeset a:not(.md-button):focus {
   color: #ef4444 !important;
   text-decoration: underline;
 }
@@ -54,7 +54,6 @@
 
 /* Uniform Button Styling Across Entire Site */
 .md-button,
-.header-crm-login,
 button.md-button,
 a.md-button {
   background-color: #0284c7 !important;
@@ -75,8 +74,6 @@ a.md-button {
 
 .md-button:hover,
 .md-button:focus,
-.header-crm-login:hover,
-.header-crm-login:focus,
 button.md-button:hover,
 a.md-button:hover {
   background-color: #0369a1 !important;
@@ -84,13 +81,24 @@ a.md-button:hover {
   color: #ffffff !important;
 }
 
-/* Header CRM Login Button positioning */
-.header-crm-login {
-  padding: 0.35rem 0.85rem !important;
-  font-size: 0.8rem !important;
+/* Header CMS Login Link (Simple clickable text) */
+.header-cms-login {
+  color: #cbd5e1 !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
   margin-left: auto;
-  margin-right: 0.75rem;
-  border-color: #38bdf8 !important;
+  margin-right: 1.25rem;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+}
+
+.header-cms-login:hover,
+.header-cms-login:focus {
+  color: #ef4444 !important;
+  text-decoration: underline !important;
 }
 
 /* Enforce 0px rounded corners across all components */
