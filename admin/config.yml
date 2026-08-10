@@ -38,7 +38,14 @@ collections:
     fields:
       - { label: "ID / Slug", name: "id", widget: "string", hint: "Unique identifier matching tool filename" }
       - { label: "Tool Name", name: "title", widget: "string" }
-      - { label: "Capability Area (ID)", name: "capability", widget: "string", hint: "ID of capability (e.g. electronic-assembly)" }
+      - label: "Parent Capability"
+        name: "capability"
+        widget: "relation"
+        collection: "capabilities"
+        search_fields: ["title", "id"]
+        value_field: "id"
+        display_fields: ["title"]
+        hint: "Select the capability this tool belongs to"
       - { label: "Icon Identifier", name: "icon", widget: "string", required: false, default: "wrench", hint: "Enter any Lucide icon name (e.g. wrench, cpu, camera, microscope). Browse 1,500+ icons at: https://lucide.dev/icons/" }
       - { label: "Classification / Type", name: "type", widget: "string", required: false }
       - { label: "Dimensions / Footprint", name: "dimensions", widget: "string", required: false }
@@ -61,6 +68,15 @@ collections:
       - { label: "Icon Identifier", name: "icon", widget: "string", required: false, default: "folder-kanban", hint: "Enter any Lucide icon name (e.g. folder-kanban, rocket, shield-check, cpu). Browse 1,500+ icons at: https://lucide.dev/icons/" }
       - { label: "Development Status", name: "status", widget: "select", options: ["Concept", "Early Development", "Active Prototyping", "Completed", "Archived"], default: "Concept" }
       - { label: "Team Lead", name: "lead", widget: "string", required: false }
-      - { label: "Tools Used (IDs)", name: "tools", widget: "list", required: false }
+      - label: "Tools & Equipment Used"
+        name: "tools"
+        widget: "relation"
+        collection: "tools"
+        search_fields: ["title", "id"]
+        value_field: "id"
+        display_fields: ["title"]
+        multiple: true
+        required: false
+        hint: "Select tools and equipment used in this project"
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Detailed Description (Body)", name: "body", widget: "markdown", required: false }

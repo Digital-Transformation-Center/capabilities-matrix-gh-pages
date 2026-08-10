@@ -27,5 +27,5 @@ dist-ssr
 .venv
 venv
 site
+.build_content
 content/admin
-

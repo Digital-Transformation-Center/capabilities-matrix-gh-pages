@@ -4,15 +4,23 @@ const matter = require('gray-matter');
 
 const rootDir = path.resolve(__dirname, '..');
 const contentDir = path.join(rootDir, 'content');
+const buildContentDir = path.join(rootDir, '.build_content');
 const outputDir = path.join(rootDir, 'src', 'data');
 const outputFile = path.join(outputDir, 'matrixData.json');
 
-console.log('🔄 Compiling Markdown Matrix Data...');
+console.log('🔄 Compiling Markdown Matrix Data & Preparing .build_content...');
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
+
+// 1. Prepare .build_content directory cleanly from content
+if (fs.existsSync(buildContentDir)) {
+  fs.rmSync(buildContentDir, { recursive: true, force: true });
+}
+fs.mkdirSync(buildContentDir, { recursive: true });
+fs.cpSync(contentDir, buildContentDir, { recursive: true });
 
 // Process site domain configuration from site-config.json
 const siteConfigPath = path.join(rootDir, 'site-config.json');
@@ -38,7 +46,6 @@ if (!fs.existsSync(publicDir)) {
 const siteConfigJsPath = path.join(publicDir, 'site-config.js');
 const siteConfigJsContent = `// Auto-generated from site-config.json during build\nwindow.SITE_CONFIG = ${JSON.stringify(siteConfig, null, 2)};\n`;
 fs.writeFileSync(siteConfigJsPath, siteConfigJsContent, 'utf8');
-console.log('⚙️ Populated public/site-config.js from site-config.json');
 
 // Auto-update site_url in admin/config.yml
 const adminConfigYamlPath = path.join(rootDir, 'admin', 'config.yml');
@@ -52,20 +59,19 @@ if (fs.existsSync(adminConfigYamlPath)) {
   fs.writeFileSync(adminConfigYamlPath, yamlContent, 'utf8');
 }
 
-// Generate content/site-config.js for MkDocs site output
-const contentSiteConfigJsPath = path.join(contentDir, 'site-config.js');
-fs.writeFileSync(contentSiteConfigJsPath, siteConfigJsContent, 'utf8');
+// Generate .build_content/site-config.js for MkDocs site output
+const buildSiteConfigJsPath = path.join(buildContentDir, 'site-config.js');
+fs.writeFileSync(buildSiteConfigJsPath, siteConfigJsContent, 'utf8');
 
-// Ensure admin files are copied to content/admin and public/admin for MkDocs/Vite build output
+// Ensure admin files are copied to .build_content/admin and public/admin for MkDocs/Vite build output
 const adminSrc = path.join(rootDir, 'admin');
-const adminContent = path.join(contentDir, 'admin');
+const adminBuild = path.join(buildContentDir, 'admin');
 const adminPublic = path.join(rootDir, 'public', 'admin');
 if (fs.existsSync(adminSrc)) {
-  fs.mkdirSync(adminContent, { recursive: true });
-  fs.cpSync(adminSrc, adminContent, { recursive: true });
+  fs.mkdirSync(adminBuild, { recursive: true });
+  fs.cpSync(adminSrc, adminBuild, { recursive: true });
   fs.mkdirSync(adminPublic, { recursive: true });
   fs.cpSync(adminSrc, adminPublic, { recursive: true });
-  console.log('📁 Synced /admin directory to /content/admin for MkDocs build output.');
 }
 
 // Helper to format icon markup (Lucide or Material)
@@ -84,12 +90,18 @@ function formatIconMarkup(iconStr) {
   return `<i data-lucide="${str}"></i>`;
 }
 
-// Helper to safely list markdown files in a subfolder
+// Helper to process :lucide-icon-name: shortcodes into <i data-lucide="icon-name"></i>
+function processLucideShortcodes(contentStr) {
+  if (!contentStr) return '';
+  return contentStr.replace(/:lucide-([a-z0-9-]+):/g, '<i data-lucide="$1"></i>');
+}
+
+// Helper to safely list markdown files in content directory
 function getMdFiles(subDir) {
   const targetDir = path.join(contentDir, subDir);
   if (!fs.existsSync(targetDir)) return [];
   return fs.readdirSync(targetDir)
-    .filter(f => f.endsWith('.md'))
+    .filter(f => f.endsWith('.md') && f !== 'index.md')
     .map(f => ({
       fileName: f,
       fullPath: path.join(targetDir, f),
@@ -97,7 +109,7 @@ function getMdFiles(subDir) {
     }));
 }
 
-// Helper to parse dimensions (width, length, height in mm)
+// Helper to parse dimensions
 function parseDimensions(dim) {
   if (!dim) return null;
   if (typeof dim === 'object' && !Array.isArray(dim)) {
@@ -107,7 +119,6 @@ function parseDimensions(dim) {
     if (w || l || h) return { width: w, length: l, height: h };
   }
   if (typeof dim === 'string') {
-    // Parse "650 x 1100 x 1450" or "650, 1100, 1450"
     const parts = dim.toLowerCase().replace(/mm|in|"/g, '').split(/[x,×]/).map(p => parseFloat(p.trim())).filter(n => !isNaN(n));
     if (parts.length >= 2) {
       return {
@@ -120,13 +131,7 @@ function parseDimensions(dim) {
   return null;
 }
 
-// Helper to process :lucide-icon-name: shortcodes into <i data-lucide="icon-name"></i>
-function processLucideShortcodes(contentStr) {
-  if (!contentStr) return '';
-  return contentStr.replace(/:lucide-([a-z0-9-]+):/g, '<i data-lucide="$1"></i>');
-}
-
-// 1. Read Capabilities
+// 1. Read Capabilities from RAW content/ directory
 const capabilityFiles = getMdFiles('capabilities');
 const capabilitiesMap = {};
 
@@ -149,7 +154,7 @@ capabilityFiles.forEach(({ fileName, fullPath, relativePath }) => {
   };
 });
 
-// 2. Read Tools
+// 2. Read Tools from RAW content/ directory
 const toolFiles = getMdFiles('tools');
 const toolsMap = {};
 
@@ -162,11 +167,12 @@ toolFiles.forEach(({ fileName, fullPath, relativePath }) => {
     id: id,
     title: data.title || id,
     capabilityId: data.capability || '',
+    icon: data.icon || 'wrench',
     type: data.type || 'Equipment / Tool',
     dimensions: parseDimensions(data.dimensions || data.footprint),
     tags: Array.isArray(data.tags) ? data.tags : [],
     summary: data.summary || '',
-    body: content.trim(),
+    body: processLucideShortcodes(content.trim()),
     relativePath: relativePath,
     projects: []
   };
@@ -181,7 +187,7 @@ toolFiles.forEach(({ fileName, fullPath, relativePath }) => {
   }
 });
 
-// 3. Read Projects
+// 3. Read Projects from RAW content/ directory
 const projectFiles = getMdFiles('projects');
 const projectsMap = {};
 
@@ -215,73 +221,38 @@ projectFiles.forEach(({ fileName, fullPath, relativePath }) => {
   projectsMap[id] = {
     id: id,
     title: data.title || id,
+    icon: data.icon || 'folder-kanban',
     status: data.status || 'Active',
     lead: data.lead || 'DTC Team',
     tools: toolIds,
     capabilities: Array.from(derivedCapabilityIds),
     summary: data.summary || '',
-    body: content.trim(),
+    body: processLucideShortcodes(content.trim()),
     relativePath: relativePath
   };
 });
 
-// Inject Bi-Directional Links into Markdown files for MkDocs cross-referencing
+// Write Compiled JSON for site consumption
+fs.writeFileSync(outputFile, JSON.stringify({
+  capabilities: Object.values(capabilitiesMap),
+  tools: Object.values(toolsMap),
+  projects: Object.values(projectsMap)
+}, null, 2), 'utf8');
+
+// Inject Bi-Directional Links ONLY into .build_content/ directory (leaving content/ 100% clean raw source!)
 const LINK_HEADER_MARKER = '## Related Items';
-const EMOJI_LINK_HEADER_MARKER = '## 🔗 Related Items';
 
-function appendOrReplaceRelatedSection(filePath, newSectionContent) {
-  let rawContent = fs.readFileSync(filePath, 'utf8');
-  
-  const idx1 = rawContent.indexOf('## Related Items');
-  const idx2 = rawContent.indexOf('## 🔗 Related Items');
-  
-  let markerIndex = -1;
-  if (idx1 !== -1 && idx2 !== -1) {
-    markerIndex = Math.min(idx1, idx2);
-  } else if (idx1 !== -1) {
-    markerIndex = idx1;
-  } else if (idx2 !== -1) {
-    markerIndex = idx2;
-  }
+function appendRelatedSectionToBuild(subFolder, fileId, newSectionContent) {
+  const targetPath = path.join(buildContentDir, subFolder, `${fileId}.md`);
+  if (!fs.existsSync(targetPath)) return;
 
-  if (markerIndex !== -1) {
-    rawContent = rawContent.substring(0, markerIndex).trimEnd();
-  }
+  let rawContent = fs.readFileSync(targetPath, 'utf8');
   const updatedContent = rawContent.trimEnd() + '\n\n' + newSectionContent.trim() + '\n';
-  fs.writeFileSync(filePath, updatedContent, 'utf8');
+  fs.writeFileSync(targetPath, updatedContent, 'utf8');
 }
 
-// Strip related sections from overview index pages
-function stripRelatedSection(filePath) {
-  if (!fs.existsSync(filePath)) return;
-  let rawContent = fs.readFileSync(filePath, 'utf8');
-  const idx1 = rawContent.indexOf('## Related Items');
-  const idx2 = rawContent.indexOf('## 🔗 Related Items');
-  let markerIndex = -1;
-  if (idx1 !== -1 && idx2 !== -1) {
-    markerIndex = Math.min(idx1, idx2);
-  } else if (idx1 !== -1) {
-    markerIndex = idx1;
-  } else if (idx2 !== -1) {
-    markerIndex = idx2;
-  }
-
-  if (markerIndex !== -1) {
-    rawContent = rawContent.substring(0, markerIndex).trimEnd() + '\n';
-    fs.writeFileSync(filePath, rawContent, 'utf8');
-  }
-}
-
-['capabilities/index.md', 'tools/index.md', 'projects/index.md', 'index.md'].forEach(file => {
-  stripRelatedSection(path.join(contentDir, file));
-});
-
-// 1. Inject into Capability markdown files
+// 1. Inject into Capability markdown files in .build_content/
 Object.values(capabilitiesMap).forEach((cap) => {
-  if (cap.id === 'index') return;
-  const filePath = path.join(contentDir, 'capabilities', `${cap.id}.md`);
-  if (!fs.existsSync(filePath)) return;
-
   const relatedTools = cap.tools.map(tId => toolsMap[tId]).filter(Boolean);
   const relatedProjects = cap.projects.map(pId => projectsMap[pId]).filter(Boolean);
 
@@ -305,15 +276,11 @@ Object.values(capabilitiesMap).forEach((cap) => {
     section += '\n';
   }
 
-  appendOrReplaceRelatedSection(filePath, section);
+  appendRelatedSectionToBuild('capabilities', cap.id, section);
 });
 
-// 2. Inject into Tool markdown files
+// 2. Inject into Tool markdown files in .build_content/
 Object.values(toolsMap).forEach((tool) => {
-  if (tool.id === 'index') return;
-  const filePath = path.join(contentDir, 'tools', `${tool.id}.md`);
-  if (!fs.existsSync(filePath)) return;
-
   const parentCap = capabilitiesMap[tool.capabilityId];
   const relatedProjects = tool.projects.map(pId => projectsMap[pId]).filter(Boolean);
 
@@ -334,46 +301,85 @@ Object.values(toolsMap).forEach((tool) => {
     section += '\n';
   }
 
-  appendOrReplaceRelatedSection(filePath, section);
+  appendRelatedSectionToBuild('tools', tool.id, section);
 });
 
-// 3. Inject into Project markdown files
+// 3. Inject into Project markdown files in .build_content/
 Object.values(projectsMap).forEach((proj) => {
-  if (proj.id === 'index') return;
-  const filePath = path.join(contentDir, 'projects', `${proj.id}.md`);
-  if (!fs.existsSync(filePath)) return;
-
   const relatedTools = proj.tools.map(tId => toolsMap[tId]).filter(Boolean);
-  const relatedCaps = proj.capabilities.map(cId => capabilitiesMap[cId]).filter(Boolean);
 
-  let section = `${LINK_HEADER_MARKER}\n\n### <i data-lucide="wrench"></i> Tools & Equipment Used\n`;
-  if (relatedTools.length === 0) {
-    section += '_No tools specified._\n\n';
+  let section = `${LINK_HEADER_MARKER}\n\n### <i data-lucide="layers"></i> Capabilities & Tools Used\n`;
+  
+  // Group tools by parent capability
+  const toolsByCap = {};
+  relatedTools.forEach(t => {
+    const capId = t.capabilityId || 'other';
+    if (!toolsByCap[capId]) toolsByCap[capId] = [];
+    toolsByCap[capId].push(t);
+  });
+
+  if (Object.keys(toolsByCap).length === 0) {
+    section += '_No tools or capabilities assigned yet._\n\n';
   } else {
-    relatedTools.forEach(t => {
-      section += `- **[${t.title}](../tools/${t.id}.md)** (${t.type}) - ${t.summary}\n`;
+    Object.keys(toolsByCap).forEach(capId => {
+      const cap = capabilitiesMap[capId];
+      const capLink = cap ? `**[${cap.title}](../capabilities/${cap.id}.md)**` : '**General Equipment**';
+      
+      section += `- ${capLink}\n`;
+      toolsByCap[capId].forEach(t => {
+        section += `  - **[${t.title}](../tools/${t.id}.md)** (${t.type}) - ${t.summary}\n`;
+      });
     });
     section += '\n';
   }
 
-  section += `### <i data-lucide="layers"></i> Capabilities Supported\n`;
-  if (relatedCaps.length === 0) {
-    section += '_No capabilities derived._\n\n';
-  } else {
-    relatedCaps.forEach(c => {
-      section += `- **[${c.title}](../capabilities/${c.id}.md)**: ${c.summary}\n`;
-    });
-    section += '\n';
-  }
-
-  appendOrReplaceRelatedSection(filePath, section);
+  appendRelatedSectionToBuild('projects', proj.id, section);
 });
 
-// Auto-generate content/index.md with Full Matrix Grid Table
-function generateIndexPageMarkdown() {
-  const toolsList = Object.values(toolsMap).filter(t => t.id !== 'index');
-  const projectsList = Object.values(projectsMap).filter(p => p.id !== 'index');
-  const capsList = Object.values(capabilitiesMap).filter(c => c.id !== 'index');
+// Auto-generate .build_content/capabilities/index.md Overview Directory
+function generateCapabilitiesIndexMarkdown() {
+  const capsList = Object.values(capabilitiesMap);
+  let content = `# Capabilities Overview Directory\n\nThe Digital Transformation Center Model Shop offers 5 core physical and digital capabilities to support rapid prototyping, sensorization, inspection, and automated operations.\n\n| Icon | Capability Area | Category | Summary |\n| :---: | :--- | :--- | :--- |\n`;
+
+  capsList.forEach(c => {
+    const iconMarkup = formatIconMarkup(c.icon);
+    content += `| ${iconMarkup} | **[${c.title}](${c.id}.md)** | ${c.category} | ${c.summary} |\n`;
+  });
+
+  fs.writeFileSync(path.join(buildContentDir, 'capabilities', 'index.md'), content, 'utf8');
+}
+
+// Auto-generate .build_content/tools/index.md Overview Directory
+function generateToolsIndexMarkdown() {
+  const toolsList = Object.values(toolsMap);
+  let content = `# Tools & Equipment Directory\n\nComprehensive inventory of specialized fabrication, inspection, metrology, and prototyping tools available in the DTC Model Shop.\n\n| Tool / Equipment | Parent Capability | Classification / Type | Summary |\n| :--- | :--- | :--- | :--- |\n`;
+
+  toolsList.forEach(t => {
+    const parentCap = capabilitiesMap[t.capabilityId];
+    const capCell = parentCap ? `[${parentCap.title}](../capabilities/${parentCap.id}.md)` : '-';
+    content += `| **[${t.title}](${t.id}.md)** | ${capCell} | ${t.type} | ${t.summary} |\n`;
+  });
+
+  fs.writeFileSync(path.join(buildContentDir, 'tools', 'index.md'), content, 'utf8');
+}
+
+// Auto-generate .build_content/projects/index.md Overview Directory
+function generateProjectsIndexMarkdown() {
+  const projectsList = Object.values(projectsMap);
+  let content = `# Demonstrator Projects Directory\n\nActive demonstrator projects showcasing integrated DTC capabilities, specialized equipment, and custom automation tooling.\n\n| Project Title | Status | Team Lead | Tools Used |\n| :--- | :---: | :--- | :---: |\n`;
+
+  projectsList.forEach(p => {
+    content += `| **[${p.title}](${p.id}.md)** | ${p.status} | ${p.lead} | ${p.tools.length} Tools |\n`;
+  });
+
+  fs.writeFileSync(path.join(buildContentDir, 'projects', 'index.md'), content, 'utf8');
+}
+
+// Auto-generate .build_content/index.md with Full Matrix Grid Table
+function generateHomePageMarkdown() {
+  const toolsList = Object.values(toolsMap);
+  const projectsList = Object.values(projectsMap);
+  const capsList = Object.values(capabilitiesMap);
 
   let tableHeader = '| Tool / Equipment | Capability |';
   let tableAlign = '| :--- | :--- |';
@@ -444,20 +450,13 @@ ${tableRows}
 ${capsList.map(c => `| **[${c.title}](capabilities/${c.id}.md)** | ${c.category} | ${c.summary} |`).join('\n')}
 `;
 
-  fs.writeFileSync(path.join(contentDir, 'index.md'), indexMdContent, 'utf8');
+  fs.writeFileSync(path.join(buildContentDir, 'index.md'), indexMdContent, 'utf8');
 }
 
-generateIndexPageMarkdown();
+// Generate all overview index pages dynamically inside .build_content/
+generateCapabilitiesIndexMarkdown();
+generateToolsIndexMarkdown();
+generateProjectsIndexMarkdown();
+generateHomePageMarkdown();
 
-const outputData = {
-  compiledAt: new Date().toISOString(),
-  capabilities: Object.values(capabilitiesMap),
-  tools: Object.values(toolsMap),
-  projects: Object.values(projectsMap)
-};
-
-fs.writeFileSync(outputFile, JSON.stringify(outputData, null, 2), 'utf8');
-console.log(`✅ Matrix Data compiled & bi-directional links + Full Matrix Table injected successfully! (${outputData.capabilities.length} capabilities, ${outputData.tools.length} tools, ${outputData.projects.length} projects)`);
-
-
-
+console.log(`✅ Built .build_content/ successfully! (${Object.keys(capabilitiesMap).length} capabilities, ${Object.keys(toolsMap).length} tools, ${Object.keys(projectsMap).length} projects)`);

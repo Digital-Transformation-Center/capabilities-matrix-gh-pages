@@ -1,5 +1,4 @@
 {
-  "compiledAt": "2026-08-10T19:12:17.430Z",
   "capabilities": [
     {
       "id": "electronic-assembly",
@@ -8,7 +7,7 @@
       "color": "#f4c20d",
       "category": "Construction",
       "summary": "Assemble and test electronic components and circuits for prototyping and production.",
-      "body": "# Electronic Assembly\n\nAssemble and test electronic components and circuits for prototyping and production.\n\n## Focus Areas\n\n- Soldering and desoldering of components on PCBs.\n- Testing and debugging of electronic circuits.\n- Creating custom wiring harnesses and connectors for integration into larger systems.\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Associated Tools & Equipment\n- **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)**: Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.\n- **[Oscilloscope](../tools/oscilloscope.md)**: High-precision oscilloscope for analyzing electronic signals and waveforms.\n- **[PCB CNC Milling & Prototyping Station](../tools/pcb-fabrication.md)**: Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.\n- **[Soldering & Rework Station](../tools/soldering.md)**: Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n\n### <i data-lucide=\"folder-kanban\"></i> Active Demonstrator Projects\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_\n- **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_\n- **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_",
+      "body": "# Electronic Assembly\n\nAssemble and test electronic components and circuits for prototyping and production.\n\n## Focus Areas\n\n- Soldering and desoldering of components on PCBs.\n- Testing and debugging of electronic circuits.\n- Creating custom wiring harnesses and connectors for integration into larger systems.",
       "relativePath": "content/capabilities/electronic-assembly.md",
       "tools": [
         "dc-power-supply",
@@ -27,25 +26,13 @@
       ]
     },
     {
-      "id": "index",
-      "title": "index",
-      "icon": "cpu",
-      "color": "#3B82F6",
-      "category": "General Capability",
-      "summary": "",
-      "body": "# Capabilities Overview\n\nWelcome to the **DTC Model Shop Capabilities Registry**. Below is a directory of core technological capabilities available at the Digital Transformation Center.\n\nEach capability encompasses physical tools, equipment, and demonstrator projects. Click on any capability below to view details, linked equipment, and active projects.\n\n## Capabilities Directory\n\n| Capability | Category / Area | Summary |\n| :--- | :--- | :--- |\n| [Electronic Assembly](electronic-assembly.md) | Construction | Assemble and test electronic components and circuits for prototyping and production. |\n| [Metrology & Inspection](metrology-and-inspection.md) | Validation | High-precision measurement, non-contact optical analysis, and part inspection. |\n| [Rapid Prototyping](rapid-prototyping.md) | Fabrication | Additive manufacturing and quick-turn physical part iteration. |\n| [Rigging & Construction](rigging-and-construction.md) | Construction | Structural framing, heavy equipment mounting, and physical test stands. |\n| [Robotics & Automation](robotics-and-automation.md) | Automation | Collaborative robots, smart vision systems, and automated cell workflows. |",
-      "relativePath": "content/capabilities/index.md",
-      "tools": [],
-      "projects": []
-    },
-    {
       "id": "metrology-and-inspection",
       "title": "Metrology & Inspection",
       "icon": "material/eye-outline",
       "color": "#8B5CF6",
       "category": "Validation",
       "summary": "High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.",
-      "body": "# Metrology & Inspection\n\nThe Metrology & Inspection capability provides users with precise optical and digital measurement equipment to rapidly inspect fabricated parts, verify physical dimensions, and track surface deformation against CAD and simulation models.\n\n## Focus Areas\n\n- Non-contact 3D surface deformation and optical strain tracking (DIC).\n- Precision dimensional measurement and quality inspection of fabricated parts.\n- Physical validation of computational simulation models (FEA/CFD).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Associated Tools & Equipment\n- **[Digital Image Correlation (DIC) Optical System](../tools/dic-camera-system.md)**: High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.\n- **[Digital Inspection Microscope](../tools/digital-microscope.md)**: High-magnification digital stereo microscope with integrated HD camera for optical surface inspection, solder joint validation, and micro-defect analysis.\n- **[Metrology-Grade Structured Light 3D Scanner](../tools/structured-light-scanner.md)**: High-precision structured light 3D scanner for detailed surface measurement and inspection applications.\n- **[High-Resolution Thermal Imaging Camera](../tools/thermal-camera.md)**: Non-contact infrared thermal camera for full-field heat mapping, thermal throttling analysis, and PCB hot-spot inspection.\n\n### <i data-lucide=\"folder-kanban\"></i> Active Demonstrator Projects\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_",
+      "body": "# Metrology & Inspection\n\nThe Metrology & Inspection capability provides users with precise optical and digital measurement equipment to rapidly inspect fabricated parts, verify physical dimensions, and track surface deformation against CAD and simulation models.\n\n## Focus Areas\n\n- Non-contact 3D surface deformation and optical strain tracking (DIC).\n- Precision dimensional measurement and quality inspection of fabricated parts.\n- Physical validation of computational simulation models (FEA/CFD).",
       "relativePath": "content/capabilities/metrology-and-inspection.md",
       "tools": [
         "dic-camera-system",
@@ -68,7 +55,7 @@
       "color": "#89d911",
       "category": "Construction",
       "summary": "Quickly create physical components for projects with short timelines or rapid iteration cycles.",
-      "body": "# Rapid Prototyping\n\nThe Rapid Prototyping capability allows users to quickly create physical components for projects with short timelines or rapid iteration cycles. This capability is ideal for testing and validating designs before committing to full-scale production.\n\n## Focus Areas\n\n- 3D printing for rapid iteration of parts and assemblies.\n- CNC machining for precision components.\n- Laser cutting for quick fabrication of flat materials.\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Associated Tools & Equipment\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)**: High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n\n### <i data-lucide=\"folder-kanban\"></i> Active Demonstrator Projects\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_\n- **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_\n- **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_",
+      "body": "# Rapid Prototyping\n\nThe Rapid Prototyping capability allows users to quickly create physical components for projects with short timelines or rapid iteration cycles. This capability is ideal for testing and validating designs before committing to full-scale production.\n\n## Focus Areas\n\n- 3D printing for rapid iteration of parts and assemblies.\n- CNC machining for precision components.\n- Laser cutting for quick fabrication of flat materials.",
       "relativePath": "content/capabilities/rapid-prototyping.md",
       "tools": [
         "fdm-3dp"
@@ -91,7 +78,7 @@
       "color": "#b74949",
       "category": "Construction",
       "summary": "Rigid mounting frames, modular components, and prototyping platforms.",
-      "body": "# Rigging & Construction\n\nProvides the framework for portable and adaptable physical prototypes. The Rigging & Construction capability allows users to quickly assemble mounting platforms for a wide variety of applications. \n\n## Key Focus Areas\n- Aluminum T-Slot fabrication (cutting, drilling).\n- Readily-available assembly components (screws, nuts, brackets).\n- Carbon fiber construction.\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Associated Tools & Equipment\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)**: 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n\n### <i data-lucide=\"folder-kanban\"></i> Active Demonstrator Projects\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_",
+      "body": "# Rigging & Construction\n\nProvides the framework for portable and adaptable physical prototypes. The Rigging & Construction capability allows users to quickly assemble mounting platforms for a wide variety of applications. \n\n## Key Focus Areas\n- Aluminum T-Slot fabrication (cutting, drilling).\n- Readily-available assembly components (screws, nuts, brackets).\n- Carbon fiber construction.",
       "relativePath": "content/capabilities/rigging-and-construction.md",
       "tools": [
         "metal-chop-saw"
@@ -112,7 +99,7 @@
       "color": "#10B981",
       "category": "Automation",
       "summary": "Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.",
-      "body": "# Robotics & Automation\n\nThe Robotics & Automation capability provides users with compact collaborative robots, motion controllers, and vision guidance sensors to rapidly prototype automated manipulation, assembly, inspection, and maintenance sequences.\n\n## Focus Areas\n\n- Collaborative robot (cobot) programming and end-effector integration.\n- Vision-guided positioning and target tracking for automated inspection and maintenance.\n- Quick-change tool interfaces (magnetic, pneumatic, mechanical) for multi-purpose robotic tasks.\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Associated Tools & Equipment\n- **[Benchtop Collaborative Robot Arm](../tools/cobot-arm.md)**: Compact 6-axis collaborative robot arm with integrated safety sensors for automated manipulation, assembly, and tool-changing experiments.\n- **[Robotic Vision & Positioning Camera System](../tools/smart-vision-system.md)**: Industrial smart camera system for robot guidance, 2D/3D part positioning, and automated inspection alignment.\n\n### <i data-lucide=\"folder-kanban\"></i> Active Demonstrator Projects\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_",
+      "body": "# Robotics & Automation\n\nThe Robotics & Automation capability provides users with compact collaborative robots, motion controllers, and vision guidance sensors to rapidly prototype automated manipulation, assembly, inspection, and maintenance sequences.\n\n## Focus Areas\n\n- Collaborative robot (cobot) programming and end-effector integration.\n- Vision-guided positioning and target tracking for automated inspection and maintenance.\n- Quick-change tool interfaces (magnetic, pneumatic, mechanical) for multi-purpose robotic tasks.",
       "relativePath": "content/capabilities/robotics-and-automation.md",
       "tools": [
         "cobot-arm",
@@ -129,6 +116,7 @@
       "id": "cobot-arm",
       "title": "Benchtop Collaborative Robot Arm",
       "capabilityId": "robotics-and-automation",
+      "icon": "wrench",
       "type": "Robotic Equipment",
       "dimensions": {
         "width": 500,
@@ -143,7 +131,7 @@
         "Motion Control"
       ],
       "summary": "Compact 6-axis collaborative robot arm with integrated safety sensors for automated manipulation, assembly, and tool-changing experiments.",
-      "body": "# Benchtop Collaborative Robot Arm\n\nCompact 6-axis collaborative robot arm used in the DTC Model Shop for prototyping automated pick-and-place routines, testing custom 3D-printed end-effectors, and developing automated maintenance workflows.\n\n## Features\n- 6-degree-of-freedom articulated arm with torque feedback safety sensors for cage-free operation.\n- Standardized tool flange interface supporting quick-change magnetic and pneumatic tool changers.\n- Programmable digital/analog I/O and Ethernet interface for integrating grippers and sensors.\n- Teach pendant and Python/ROS API support for rapid trajectory and motion sequence development.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_",
+      "body": "# Benchtop Collaborative Robot Arm\n\nCompact 6-axis collaborative robot arm used in the DTC Model Shop for prototyping automated pick-and-place routines, testing custom 3D-printed end-effectors, and developing automated maintenance workflows.\n\n## Features\n- 6-degree-of-freedom articulated arm with torque feedback safety sensors for cage-free operation.\n- Standardized tool flange interface supporting quick-change magnetic and pneumatic tool changers.\n- Programmable digital/analog I/O and Ethernet interface for integrating grippers and sensors.\n- Teach pendant and Python/ROS API support for rapid trajectory and motion sequence development.",
       "relativePath": "content/tools/cobot-arm.md",
       "projects": [
         "automated-paint-twin",
@@ -154,6 +142,7 @@
       "id": "dc-power-supply",
       "title": "Programmable DC Bench Power Supply & Analyzer",
       "capabilityId": "electronic-assembly",
+      "icon": "wrench",
       "type": "Physical Machinery",
       "dimensions": {
         "width": 350,
@@ -167,7 +156,7 @@
         "Benchtop"
       ],
       "summary": "Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.",
-      "body": "# Programmable DC Bench Power Supply & Analyzer\n\nBenchtop multi-channel programmable DC power supply used in the DTC Model Shop to deliver regulated voltage rails and measure dynamic power consumption across electronic prototypes and edge compute hardware.\n\n## Features\n- Multi-channel isolated DC outputs with precise voltage and current limit regulation.\n- High-resolution real-time voltage, current, and wattage monitoring.\n- Dynamic data logging for profiling power spikes, idle power, and watt-per-inference metrics.\n- Over-voltage and over-current protection (OVP/OCP) to safeguard sensitive development boards.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_",
+      "body": "# Programmable DC Bench Power Supply & Analyzer\n\nBenchtop multi-channel programmable DC power supply used in the DTC Model Shop to deliver regulated voltage rails and measure dynamic power consumption across electronic prototypes and edge compute hardware.\n\n## Features\n- Multi-channel isolated DC outputs with precise voltage and current limit regulation.\n- High-resolution real-time voltage, current, and wattage monitoring.\n- Dynamic data logging for profiling power spikes, idle power, and watt-per-inference metrics.\n- Over-voltage and over-current protection (OVP/OCP) to safeguard sensitive development boards.",
       "relativePath": "content/tools/dc-power-supply.md",
       "projects": [
         "automated-paint-twin",
@@ -180,6 +169,7 @@
       "id": "dic-camera-system",
       "title": "Digital Image Correlation (DIC) Optical System",
       "capabilityId": "metrology-and-inspection",
+      "icon": "wrench",
       "type": "Measurement & Metrology",
       "dimensions": {
         "width": 800,
@@ -194,7 +184,7 @@
         "Non-Contact"
       ],
       "summary": "High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.",
-      "body": "# Digital Image Correlation (DIC) Optical System\n\nStereoscopic optical metrology tool used in the DTC Model Shop to capture high-speed 3D surface deformation, strain distribution, and displacement fields without physical contact.\n\n## Features\n- High-resolution dual stereo camera setup with synchronized high-speed capture.\n- Real-time full-field 3D strain mapping and displacement tracking under load.\n- Direct export of optical deformation mesh data for comparison against FEA simulation models.\n- Non-contact measurement ideal for lightweight composite, carbon fiber, and 3D-printed components.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_",
+      "body": "# Digital Image Correlation (DIC) Optical System\n\nStereoscopic optical metrology tool used in the DTC Model Shop to capture high-speed 3D surface deformation, strain distribution, and displacement fields without physical contact.\n\n## Features\n- High-resolution dual stereo camera setup with synchronized high-speed capture.\n- Real-time full-field 3D strain mapping and displacement tracking under load.\n- Direct export of optical deformation mesh data for comparison against FEA simulation models.\n- Non-contact measurement ideal for lightweight composite, carbon fiber, and 3D-printed components.",
       "relativePath": "content/tools/dic-camera-system.md",
       "projects": [
         "airframe-testing",
@@ -205,6 +195,7 @@
       "id": "digital-microscope",
       "title": "Digital Inspection Microscope",
       "capabilityId": "metrology-and-inspection",
+      "icon": "wrench",
       "type": "Measurement & Metrology",
       "dimensions": {
         "width": 250,
@@ -219,7 +210,7 @@
         "Quality"
       ],
       "summary": "High-magnification digital stereo microscope with integrated HD camera for optical surface inspection, solder joint validation, and micro-defect analysis.",
-      "body": "# Digital Inspection Microscope\n\nHigh-magnification digital optical microscope used in the DTC Model Shop for non-destructive visual inspection, fine-pitch PCB solder joint verification, and real-time process monitoring.\n\n## Features\n- Continuous optical zoom with high-resolution HD camera feed for live display.\n- Dimmable LED ring illumination for glare-free surface and feature inspection.\n- Real-time video output and image capture for micro-defect documentation and layer analysis.\n- Adjustable boom stand adaptable to desktop 3D printers, PCB workbenches, and inspection fixtures.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_",
+      "body": "# Digital Inspection Microscope\n\nHigh-magnification digital optical microscope used in the DTC Model Shop for non-destructive visual inspection, fine-pitch PCB solder joint verification, and real-time process monitoring.\n\n## Features\n- Continuous optical zoom with high-resolution HD camera feed for live display.\n- Dimmable LED ring illumination for glare-free surface and feature inspection.\n- Real-time video output and image capture for micro-defect documentation and layer analysis.\n- Adjustable boom stand adaptable to desktop 3D printers, PCB workbenches, and inspection fixtures.",
       "relativePath": "content/tools/digital-microscope.md",
       "projects": [
         "am-metrology"
@@ -229,6 +220,7 @@
       "id": "fdm-3dp",
       "title": "FDM 3D Printer Bank",
       "capabilityId": "rapid-prototyping",
+      "icon": "wrench",
       "type": "Physical Machinery",
       "dimensions": {
         "width": 600,
@@ -241,7 +233,7 @@
         "Rapid Prototyping"
       ],
       "summary": "High-resolution FDM 3D printer for rapid prototyping and small-scale production.",
-      "body": "# FDM 3D Printer Bank\n\nHigh-resolution FDM 3D printers for rapid prototyping and small-scale production.\n\n### Features\n- Multiple FDM 3D printers for parallel prototyping.\n- High-resolution printing for detailed parts.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_\n- **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_\n- **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_",
+      "body": "# FDM 3D Printer Bank\n\nHigh-resolution FDM 3D printers for rapid prototyping and small-scale production.\n\n### Features\n- Multiple FDM 3D printers for parallel prototyping.\n- High-resolution printing for detailed parts.",
       "relativePath": "content/tools/fdm-3dp.md",
       "projects": [
         "airframe-testing",
@@ -255,21 +247,10 @@
       ]
     },
     {
-      "id": "index",
-      "title": "index",
-      "capabilityId": "",
-      "type": "Equipment / Tool",
-      "dimensions": null,
-      "tags": [],
-      "summary": "",
-      "body": "# Tools & Equipment Directory\n\nBelow is a complete inventory of equipment, physical tools, and digital systems available at the DTC Model Shop.\n\n| Tool Name | Type | Capability | Summary |\n| :--- | :--- | :--- | :--- |\n| [Cobot Arm](cobot-arm.md) | Hardware | [Robotics & Automation](../capabilities/robotics-and-automation.md) | Universal industrial collaborative robot arm for automated handling. |\n| [DC Power Supply](dc-power-supply.md) | Physical Tool | [Electronic Assembly](../capabilities/electronic-assembly.md) | Precision multi-channel benchtop DC power supply. |\n| [DIC Camera System](dic-camera-system.md) | Equipment / Tool | [Metrology & Inspection](../capabilities/metrology-and-inspection.md) | High-speed stereoscopic 3D optical strain tracking. |\n| [Digital Microscope](digital-microscope.md) | Physical Tool | [Metrology & Inspection](../capabilities/metrology-and-inspection.md) | Ultra-high magnification inspection microscope. |\n| [FDM 3D Printer](fdm-3dp.md) | Equipment / Tool | [Rapid Prototyping](../capabilities/rapid-prototyping.md) | Fused deposition modeling 3D printer for thermoplastics. |\n| [Metal Chop Saw](metal-chop-saw.md) | Physical Tool | [Rigging & Construction](../capabilities/rigging-and-construction.md) | High-torque abrasive chop saw for structural metals. |\n| [Oscilloscope](oscilloscope.md) | Physical Tool | [Electronic Assembly](../capabilities/electronic-assembly.md) | Multi-channel digital storage oscilloscope for signal analysis. |\n| [PCB Fabrication](pcb-fabrication.md) | Equipment / Tool | [Electronic Assembly](../capabilities/electronic-assembly.md) | Quick-turn printed circuit board milling and fabrication setup. |\n| [Smart Vision System](smart-vision-system.md) | Hardware | [Robotics & Automation](../capabilities/robotics-and-automation.md) | Industrial AI vision sensor for automated inspection. |\n| [Soldering & Rework](soldering.md) | Physical Tool | [Electronic Assembly](../capabilities/electronic-assembly.md) | Precision temperature-controlled soldering and hot air rework station. |\n| [Structured Light Scanner](structured-light-scanner.md) | Hardware | [Metrology & Inspection](../capabilities/metrology-and-inspection.md) | Non-contact 3D blue-light surface scanner. |\n| [Thermal Camera](thermal-camera.md) | Equipment / Tool | [Metrology & Inspection](../capabilities/metrology-and-inspection.md) | Calibrated thermographic camera for thermal profiling. |",
-      "relativePath": "content/tools/index.md",
-      "projects": []
-    },
-    {
       "id": "metal-chop-saw",
       "title": "Industrial Metal Chop Saw",
       "capabilityId": "rigging-and-construction",
+      "icon": "wrench",
       "type": "Physical Machinery",
       "dimensions": {
         "width": 530,
@@ -283,7 +264,7 @@
         "Heavy Duty"
       ],
       "summary": "14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.",
-      "body": "# Industrial Metal Chop Saw\n\nHeavy-duty physical shop tool used in the DTC Model Shop for preparing structural aluminum, struts, steel or carbon fiber tubing, and custom rigging brackets.\n\n### Features\n- 15 Amp 5.5 HP motor\n- 14-inch abrasive wheel\n- Quick-lock vise for fast material clamping\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_",
+      "body": "# Industrial Metal Chop Saw\n\nHeavy-duty physical shop tool used in the DTC Model Shop for preparing structural aluminum, struts, steel or carbon fiber tubing, and custom rigging brackets.\n\n### Features\n- 15 Amp 5.5 HP motor\n- 14-inch abrasive wheel\n- Quick-lock vise for fast material clamping",
       "relativePath": "content/tools/metal-chop-saw.md",
       "projects": [
         "airframe-testing",
@@ -298,6 +279,7 @@
       "id": "oscilloscope",
       "title": "Oscilloscope",
       "capabilityId": "electronic-assembly",
+      "icon": "wrench",
       "type": "Physical Machinery",
       "dimensions": {
         "width": 400,
@@ -310,7 +292,7 @@
         "Electronics"
       ],
       "summary": "High-precision oscilloscope for analyzing electronic signals and waveforms.",
-      "body": "# Oscilloscope\n\nHigh-precision electronic test equipment used in the DTC Model Shop for visualizing voltage signals, troubleshooting PCB circuits, and analyzing signal integrity.\n\n### Features\n- Multi-channel digital storage oscilloscope for real-time signal capture.\n- High sampling rate and bandwidth for signal integrity and timing analysis.\n- Hardware serial bus decoding (I2C, SPI, UART, CAN) for digital communication debugging.\n- Automated measurement and waveform math capabilities.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_\n- **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_",
+      "body": "# Oscilloscope\n\nHigh-precision electronic test equipment used in the DTC Model Shop for visualizing voltage signals, troubleshooting PCB circuits, and analyzing signal integrity.\n\n### Features\n- Multi-channel digital storage oscilloscope for real-time signal capture.\n- High sampling rate and bandwidth for signal integrity and timing analysis.\n- Hardware serial bus decoding (I2C, SPI, UART, CAN) for digital communication debugging.\n- Automated measurement and waveform math capabilities.",
       "relativePath": "content/tools/oscilloscope.md",
       "projects": [
         "airframe-testing",
@@ -325,6 +307,7 @@
       "id": "pcb-fabrication",
       "title": "PCB CNC Milling & Prototyping Station",
       "capabilityId": "electronic-assembly",
+      "icon": "wrench",
       "type": "Physical Machinery",
       "dimensions": {
         "width": 500,
@@ -338,7 +321,7 @@
         "Electronics"
       ],
       "summary": "Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.",
-      "body": "# PCB CNC Milling & Prototyping Station\n\nHigh-precision desktop CNC milling machine used in the DTC Model Shop for rapid in-house prototyping of single- and double-sided printed circuit boards (PCBs), trace isolation milling, and hole drilling.\n\n## Features\n- Rapid isolation milling and contour routing for copper-clad laminates (FR-4, Rogers).\n- Automatic tool change and high-speed spindle for micro-drilling through-holes and vias.\n- Integrated height sensing for precise copper isolation depth without chemical etching.\n- Supports Gerber and Excellon drill files generated by standard EDA packages (Altium, KiCad, Eagle).\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_\n- **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_",
+      "body": "# PCB CNC Milling & Prototyping Station\n\nHigh-precision desktop CNC milling machine used in the DTC Model Shop for rapid in-house prototyping of single- and double-sided printed circuit boards (PCBs), trace isolation milling, and hole drilling.\n\n## Features\n- Rapid isolation milling and contour routing for copper-clad laminates (FR-4, Rogers).\n- Automatic tool change and high-speed spindle for micro-drilling through-holes and vias.\n- Integrated height sensing for precise copper isolation depth without chemical etching.\n- Supports Gerber and Excellon drill files generated by standard EDA packages (Altium, KiCad, Eagle).",
       "relativePath": "content/tools/pcb-fabrication.md",
       "projects": [
         "edge-ai-benchmark",
@@ -350,6 +333,7 @@
       "id": "smart-vision-system",
       "title": "Robotic Vision & Positioning Camera System",
       "capabilityId": "robotics-and-automation",
+      "icon": "wrench",
       "type": "Sensor / Vision System",
       "dimensions": {
         "width": 200,
@@ -364,7 +348,7 @@
         "Positioning"
       ],
       "summary": "Industrial smart camera system for robot guidance, 2D/3D part positioning, and automated inspection alignment.",
-      "body": "# Robotic Vision & Positioning Camera System\n\nCompact 2D/3D industrial vision sensor used in the DTC Model Shop for guiding robot motion, recognizing components, and aligning automated inspection probes.\n\n## Features\n- On-board vision processor for pattern matching, edge detection, and AprilTag/QR code recognition.\n- Direct communication interface with cobot controllers for closed-loop vision guidance.\n- Integrated LED lighting and adjustable focus lens for variable working distances.\n- High-frame-rate capture for dynamic tracking and automated part alignment.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_",
+      "body": "# Robotic Vision & Positioning Camera System\n\nCompact 2D/3D industrial vision sensor used in the DTC Model Shop for guiding robot motion, recognizing components, and aligning automated inspection probes.\n\n## Features\n- On-board vision processor for pattern matching, edge detection, and AprilTag/QR code recognition.\n- Direct communication interface with cobot controllers for closed-loop vision guidance.\n- Integrated LED lighting and adjustable focus lens for variable working distances.\n- High-frame-rate capture for dynamic tracking and automated part alignment.",
       "relativePath": "content/tools/smart-vision-system.md",
       "projects": [
         "cobot-maintenance"
@@ -374,6 +358,7 @@
       "id": "soldering",
       "title": "Soldering & Rework Station",
       "capabilityId": "electronic-assembly",
+      "icon": "wrench",
       "type": "Physical Tool",
       "dimensions": {
         "width": 600,
@@ -388,7 +373,7 @@
         "SMD"
       ],
       "summary": "Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.",
-      "body": "# Soldering & Rework Station\r\n\r\nPrecision electronic assembly and rework station used in the DTC Model Shop for wire harness fabrication, through-hole PCB assembly, surface-mount (SMD) soldering, and circuit component desoldering/repair.\r\n\r\n## Features\r\n- Dual-function temperature-controlled soldering iron and hot air rework tool.\r\n- Precision tips for fine-pitch surface-mount (SMD) components and dense PCB assemblies.\r\n- High-capacity iron for heavy gauge wiring and wire harness soldering.\r\n- Integrated vacuum desoldering pump and wick for rapid component removal and board repair.\r\n- Variable temperature and airflow controls suitable for leaded and lead-free alloys.\r\n- ESD-safe design to protect sensitive microelectronics and ICs during assembly.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Airframe Arm Deflection & Strain Test Bench](../projects/airframe-testing.md)** (Concept) - _Materials & Structures Team_\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_\n- **[Modular Quick-Change Cobot Maintenance Tooling](../projects/cobot-maintenance.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_\n- **[ML-Informed Material Stress Visualization](../projects/microscale-inspector.md)** (Concept) - _Materials, Machine Learning, and Robotics Team_\n- **[MOSA-Compliant Spart Payload Pod](../projects/mosa-payload-pod.md)** (Concept) - _Robotics & Perception Team_\n- **[Multi-Modal Acoustic-Visual Threat Detection Pod](../projects/threat-detection-pod.md)** (Concept) - _Robotics & Perception Team_",
+      "body": "# Soldering & Rework Station\r\n\r\nPrecision electronic assembly and rework station used in the DTC Model Shop for wire harness fabrication, through-hole PCB assembly, surface-mount (SMD) soldering, and circuit component desoldering/repair.\r\n\r\n## Features\r\n- Dual-function temperature-controlled soldering iron and hot air rework tool.\r\n- Precision tips for fine-pitch surface-mount (SMD) components and dense PCB assemblies.\r\n- High-capacity iron for heavy gauge wiring and wire harness soldering.\r\n- Integrated vacuum desoldering pump and wick for rapid component removal and board repair.\r\n- Variable temperature and airflow controls suitable for leaded and lead-free alloys.\r\n- ESD-safe design to protect sensitive microelectronics and ICs during assembly.",
       "relativePath": "content/tools/soldering.md",
       "projects": [
         "airframe-testing",
@@ -404,6 +389,7 @@
       "id": "structured-light-scanner",
       "title": "Metrology-Grade Structured Light 3D Scanner",
       "capabilityId": "metrology-and-inspection",
+      "icon": "wrench",
       "type": "Measurement & Metrology",
       "dimensions": {
         "width": 300,
@@ -417,7 +403,7 @@
         "Inspection"
       ],
       "summary": "High-precision structured light 3D scanner for detailed surface measurement and inspection applications.",
-      "body": "# Metrology-Grade Structured Light 3D Scanner\n\nHigh-precision structured light 3D scanner for detailed surface measurement and inspection applications.\n\n## Features\n- High-resolution 3D scanning capabilities for accurate surface characterization.\n- Real-time data processing and analysis for efficient quality control.\n- Integration with metrology software for comprehensive reporting and documentation.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Automated Twinning of Paint Application for Quality Assurance](../projects/automated-paint-twin.md)** (Early Development) - _Robotics and Machine Learning Team_",
+      "body": "# Metrology-Grade Structured Light 3D Scanner\n\nHigh-precision structured light 3D scanner for detailed surface measurement and inspection applications.\n\n## Features\n- High-resolution 3D scanning capabilities for accurate surface characterization.\n- Real-time data processing and analysis for efficient quality control.\n- Integration with metrology software for comprehensive reporting and documentation.",
       "relativePath": "content/tools/structured-light-scanner.md",
       "projects": [
         "automated-paint-twin"
@@ -427,6 +413,7 @@
       "id": "thermal-camera",
       "title": "High-Resolution Thermal Imaging Camera",
       "capabilityId": "metrology-and-inspection",
+      "icon": "wrench",
       "type": "Measurement & Metrology",
       "dimensions": {
         "width": 300,
@@ -441,7 +428,7 @@
         "Temperature"
       ],
       "summary": "Non-contact infrared thermal camera for full-field heat mapping, thermal throttling analysis, and PCB hot-spot inspection.",
-      "body": "# High-Resolution Thermal Imaging Camera\n\nPrecision radiometric infrared camera used in the DTC Model Shop for real-time thermal analysis of active electronics, high-power edge compute modules, and mechanical components under load.\n\n## Features\n- High thermal sensitivity and radiometric temperature mapping for identifying localized hot spots.\n- Non-contact thermal imaging ideal for evaluating heatsinks, cooling fan shrouds, and enclosure airflow.\n- Video recording and thermal data logging for transient thermal dissipation analysis.\n- Color palette overlays and radiometric image export for thermal simulation validation.\n\n## Related Items\n\n### <i data-lucide=\"layers\"></i> Parent Capability\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.\n\n### <i data-lucide=\"folder-kanban\"></i> Demonstrator Projects Using This Tool\n- **[Closed-Loop Additive Manufacturing In-Situ Metrology Rig](../projects/am-metrology.md)** (Concept) - _Materials & Robotics Team_\n- **[Edge AI Model Benchmarking & Thermal Test Fixture](../projects/edge-ai-benchmark.md)** (Concept) - _Electronics & Machine Learning Team_",
+      "body": "# High-Resolution Thermal Imaging Camera\n\nPrecision radiometric infrared camera used in the DTC Model Shop for real-time thermal analysis of active electronics, high-power edge compute modules, and mechanical components under load.\n\n## Features\n- High thermal sensitivity and radiometric temperature mapping for identifying localized hot spots.\n- Non-contact thermal imaging ideal for evaluating heatsinks, cooling fan shrouds, and enclosure airflow.\n- Video recording and thermal data logging for transient thermal dissipation analysis.\n- Color palette overlays and radiometric image export for thermal simulation validation.",
       "relativePath": "content/tools/thermal-camera.md",
       "projects": [
         "am-metrology",
@@ -453,6 +440,7 @@
     {
       "id": "airframe-testing",
       "title": "Airframe Arm Deflection & Strain Test Bench",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Materials & Structures Team",
       "tools": [
@@ -469,12 +457,13 @@
         "metrology-and-inspection"
       ],
       "summary": "A custom structural test fixture constructed using DTC Model Shop rapid prototyping, framing, and electronic tools to validate UAV airframe arm deflection against FEA predictions via DIC optical metrology.",
-      "body": "# Airframe Arm Deflection & Strain Test Bench\n\n- **Physical:** A custom mechanical test jig constructed using aluminum T-slot framing and 3D-printed mounts, holding a 3D-printed or carbon fiber UAV arm under static and dynamic motor thrust loads.\n        \n- **Digital/Metrology:** Utilizes high-resolution stereoscopic cameras (DIC) to track optical surface deformation in real-time, comparing empirical deflection data against Ansys FEA predictions.\n    \n- **Member Interest:** Optical metrology (Trilion), simulation validation (Ansys), structural materials testing (UDRI).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.\n- **[Digital Image Correlation (DIC) Optical System](../tools/dic-camera-system.md)** (Measurement & Metrology) - High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.",
+      "body": "# Airframe Arm Deflection & Strain Test Bench\n\n- **Physical:** A custom mechanical test jig constructed using aluminum T-slot framing and 3D-printed mounts, holding a 3D-printed or carbon fiber UAV arm under static and dynamic motor thrust loads.\n        \n- **Digital/Metrology:** Utilizes high-resolution stereoscopic cameras (DIC) to track optical surface deformation in real-time, comparing empirical deflection data against Ansys FEA predictions.\n    \n- **Member Interest:** Optical metrology (Trilion), simulation validation (Ansys), structural materials testing (UDRI).",
       "relativePath": "content/projects/airframe-testing.md"
     },
     {
       "id": "am-metrology",
       "title": "Closed-Loop Additive Manufacturing In-Situ Metrology Rig",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Materials & Robotics Team",
       "tools": [
@@ -489,12 +478,13 @@
         "rigging-and-construction"
       ],
       "summary": "An FDM 3D printer instrumented with a thermal imaging camera and optical inspection optics for in-situ monitoring of layer deposition, thermal void formation, and defect detection.",
-      "body": "# Closed-Loop Additive Manufacturing In-Situ Metrology Rig\n\n- **Physical:** A desktop 3D printer instrumented with a thermal camera and optical microscope aimed at the print nozzle.\n    \n- **Digital/AI:** Detects layer misalignments or thermal void formations during the build and feeds layer-by-layer defect maps back into CAD/FEA software to predict part strength loss before completion.\n    \n- **Member Interest:** Smart manufacturing (ARCTOS, Sinclair), digital thread integration (AFMC DTO, UDRI), physics simulation (Ansys).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[High-Resolution Thermal Imaging Camera](../tools/thermal-camera.md)** (Measurement & Metrology) - Non-contact infrared thermal camera for full-field heat mapping, thermal throttling analysis, and PCB hot-spot inspection.\n- **[Digital Inspection Microscope](../tools/digital-microscope.md)** (Measurement & Metrology) - High-magnification digital stereo microscope with integrated HD camera for optical surface inspection, solder joint validation, and micro-defect analysis.\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.",
+      "body": "# Closed-Loop Additive Manufacturing In-Situ Metrology Rig\n\n- **Physical:** A desktop 3D printer instrumented with a thermal camera and optical microscope aimed at the print nozzle.\n    \n- **Digital/AI:** Detects layer misalignments or thermal void formations during the build and feeds layer-by-layer defect maps back into CAD/FEA software to predict part strength loss before completion.\n    \n- **Member Interest:** Smart manufacturing (ARCTOS, Sinclair), digital thread integration (AFMC DTO, UDRI), physics simulation (Ansys).",
       "relativePath": "content/projects/am-metrology.md"
     },
     {
       "id": "automated-paint-twin",
       "title": "Automated Twinning of Paint Application for Quality Assurance",
+      "icon": "folder-kanban",
       "status": "Early Development",
       "lead": "Robotics and Machine Learning Team",
       "tools": [
@@ -514,12 +504,13 @@
         "metrology-and-inspection"
       ],
       "summary": "A robotic arm fitted with a custom end effector and vision system to perform automated paint thickness measurements and defect detection on painted surfaces, enabling rapid quality assurance and process optimization.",
-      "body": "# Automated Twinning of Paint Application for Quality Assurance\n\n- **Physical:** A robotic arm equipped with a custom end effector that includes a paint thickness gauge and high-resolution camera for surface inspection.\n\n- **Digital/AI:** Utilizes computer vision and machine learning algorithms to analyze paint thickness measurements and detect surface defects, providing real-time feedback for process optimization.\n\n- **Member Interest:** Machine learning for defect detection and multiphysics co-simulation (Ansys), 3D optical metrology and physical-to-digital validation (Trilion Quality Systems), embedded ML and algorithm execution (MathWorks), materials and human factors (UDRI).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[Benchtop Collaborative Robot Arm](../tools/cobot-arm.md)** (Robotic Equipment) - Compact 6-axis collaborative robot arm with integrated safety sensors for automated manipulation, assembly, and tool-changing experiments.\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.\n- **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.\n- **[Metrology-Grade Structured Light 3D Scanner](../tools/structured-light-scanner.md)** (Measurement & Metrology) - High-precision structured light 3D scanner for detailed surface measurement and inspection applications.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.",
+      "body": "# Automated Twinning of Paint Application for Quality Assurance\n\n- **Physical:** A robotic arm equipped with a custom end effector that includes a paint thickness gauge and high-resolution camera for surface inspection.\n\n- **Digital/AI:** Utilizes computer vision and machine learning algorithms to analyze paint thickness measurements and detect surface defects, providing real-time feedback for process optimization.\n\n- **Member Interest:** Machine learning for defect detection and multiphysics co-simulation (Ansys), 3D optical metrology and physical-to-digital validation (Trilion Quality Systems), embedded ML and algorithm execution (MathWorks), materials and human factors (UDRI).",
       "relativePath": "content/projects/automated-paint-twin.md"
     },
     {
       "id": "cobot-maintenance",
       "title": "Modular Quick-Change Cobot Maintenance Tooling",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Materials & Robotics Team",
       "tools": [
@@ -538,12 +529,13 @@
         "electronic-assembly"
       ],
       "summary": "Custom 3D-printed quick-change end-effectors and vision-guided tooling for benchtop collaborative robots (cobots) in automated maintenance and inspection tasks.",
-      "body": "# Modular Quick-Change Cobot Maintenance Tooling\n\n- **Physical:** A benchtop cobot arm fitted with custom 3D-printed end-effectors (grippers, inspection probes, or fastener drivers) using magnetic or pneumatic tool changers.\n    \n- **Digital/AI:** Vision-guided positioning for automated inspection or component replacement tasks.\n    \n- **Member Interest:** Automated sustainment and repair (AFRL RSO), smart manufacturing workforce training (Sinclair, NPower).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[Benchtop Collaborative Robot Arm](../tools/cobot-arm.md)** (Robotic Equipment) - Compact 6-axis collaborative robot arm with integrated safety sensors for automated manipulation, assembly, and tool-changing experiments.\n- **[Robotic Vision & Positioning Camera System](../tools/smart-vision-system.md)** (Sensor / Vision System) - Industrial smart camera system for robot guidance, 2D/3D part positioning, and automated inspection alignment.\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.\n- **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Robotics & Automation](../capabilities/robotics-and-automation.md)**: Compact robotics, motion control, and automated positioning systems for rapid prototyping of automated assembly and maintenance workflows.\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.",
+      "body": "# Modular Quick-Change Cobot Maintenance Tooling\n\n- **Physical:** A benchtop cobot arm fitted with custom 3D-printed end-effectors (grippers, inspection probes, or fastener drivers) using magnetic or pneumatic tool changers.\n    \n- **Digital/AI:** Vision-guided positioning for automated inspection or component replacement tasks.\n    \n- **Member Interest:** Automated sustainment and repair (AFRL RSO), smart manufacturing workforce training (Sinclair, NPower).",
       "relativePath": "content/projects/cobot-maintenance.md"
     },
     {
       "id": "edge-ai-benchmark",
       "title": "Edge AI Model Benchmarking & Thermal Test Fixture",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Electronics & Machine Learning Team",
       "tools": [
@@ -562,23 +554,13 @@
         "metrology-and-inspection"
       ],
       "summary": "An actively cooled, sensorized test rack for benchmarking low-power edge compute modules, measuring real-time current draw, thermal performance, and inference latency across vision AI models.",
-      "body": "# Edge AI Model Benchmarking & Thermal Test Fixture\r\n\r\n- **Physical:** An actively cooled, sensorized test rack holding multiple low-power edge compute modules, instrumented to monitor real-time current draw and thermal generation.\r\n    \r\n- **Digital/AI:** Displays live frame rates, watt-per-inference metrics, and latency across different optimized vision architectures (e.g., YOLO variants vs. quantized models).\r\n    \r\n- **Member Interest:** Algorithm optimization (MathWorks), edge hardware evaluation (IBM), defense venture acceleration (Sightline Ventures).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n- **[PCB CNC Milling & Prototyping Station](../tools/pcb-fabrication.md)** (Physical Machinery) - Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.\n- **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.\n- **[High-Resolution Thermal Imaging Camera](../tools/thermal-camera.md)** (Measurement & Metrology) - Non-contact infrared thermal camera for full-field heat mapping, thermal throttling analysis, and PCB hot-spot inspection.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.",
+      "body": "# Edge AI Model Benchmarking & Thermal Test Fixture\r\n\r\n- **Physical:** An actively cooled, sensorized test rack holding multiple low-power edge compute modules, instrumented to monitor real-time current draw and thermal generation.\r\n    \r\n- **Digital/AI:** Displays live frame rates, watt-per-inference metrics, and latency across different optimized vision architectures (e.g., YOLO variants vs. quantized models).\r\n    \r\n- **Member Interest:** Algorithm optimization (MathWorks), edge hardware evaluation (IBM), defense venture acceleration (Sightline Ventures).",
       "relativePath": "content/projects/edge-ai-benchmark.md"
-    },
-    {
-      "id": "index",
-      "title": "index",
-      "status": "Active",
-      "lead": "DTC Team",
-      "tools": [],
-      "capabilities": [],
-      "summary": "",
-      "body": "# Demonstrator Projects Registry\n\nBelow is a catalog of demonstrator projects and test benches active in the DTC Model Shop.\n\n| Project Title | Status | Lead Team | Summary |\n| :--- | :--- | :--- | :--- |\n| [Airframe Arm Deflection Test Bench](airframe-testing.md) | Concept | Materials & Structures | Custom UAV arm structural deflection fixture using DIC optical metrology. |\n| [Additive Manufacturing Metrology](am-metrology.md) | Active | Metrology & Inspection | Part dimensional validation comparing printed parts to original CAD models. |\n| [Automated Paint Digital Twin](automated-paint-twin.md) | In Progress | Automation Team | Cobot-driven robotic paint deposition setup with vision quality feedback. |\n| [Cobot Predictive Maintenance Cell](cobot-maintenance.md) | Active | Robotics Team | Sensorized cobot arm monitoring motor vibration and thermal load. |\n| [Edge AI Quality Inspector](edge-ai-benchmark.md) | Concept | AI & Software Team | Real-time smart vision defect detection benchmarked on edge compute. |\n| [Microscale Surface Defect Inspector](microscale-inspector.md) | Active | Inspection Team | Automated digital microscope inspection for fine crack detection. |\n| [MOSA Payload Pod Integration](mosa-payload-pod.md) | Active | Systems Integration | Modular open systems architecture pod with rapid prototyping mounts. |\n| [Threat Detection Sensor Pod](threat-detection-pod.md) | Active | Electronics Team | Custom sensor payload pod with custom PCB electronics and framing. |",
-      "relativePath": "content/projects/index.md"
     },
     {
       "id": "microscale-inspector",
       "title": "ML-Informed Material Stress Visualization",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Materials, Machine Learning, and Robotics Team",
       "tools": [
@@ -595,12 +577,13 @@
         "rapid-prototyping"
       ],
       "summary": "Automatically manipulate composite material samples while using microscale neural operators to predict and project stress and strain fields onto the sample surface for real-time visualization of material behavior under load.",
-      "body": "# ML-Informed Material Stress Visualization\n\n- **Physical:** Composite material samples instrumented with sensors to measure stress and strain fields.\n    \n- **Digital/AI:** Utilizes microscale neural operators to predict and project stress and strain fields onto the sample surface for real-time visualization.\n    \n- **Member Interest:** Ceramic Matrix Composites (CMCs) testing and physics-based failure modeling (UDRI), 3D optical strain tracking and Digital Image Correlation (Trilion Quality Systems), real-time multiphysics co-simulation and visualization (Ansys), immersive AR/VR digital twin projections (Bloc Digital).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[Industrial Metal Chop Saw](../tools/metal-chop-saw.md)** (Physical Machinery) - 14-inch 15-Amp abrasive chop saw for precision stock cutting of structural steel, struts, and framing.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[Digital Image Correlation (DIC) Optical System](../tools/dic-camera-system.md)** (Measurement & Metrology) - High-speed stereoscopic camera system for real-time 3D optical surface deformation and strain tracking.\n- **[Programmable DC Bench Power Supply & Analyzer](../tools/dc-power-supply.md)** (Physical Machinery) - Precision multi-channel programmable DC power supply with real-time current draw logging and power profiling.\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rigging & Construction](../capabilities/rigging-and-construction.md)**: Rigid mounting frames, modular components, and prototyping platforms.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.\n- **[Metrology & Inspection](../capabilities/metrology-and-inspection.md)**: High-precision measurement, non-contact optical analysis, and inspection tools to rapidly evaluate physical prototypes.\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.",
+      "body": "# ML-Informed Material Stress Visualization\n\n- **Physical:** Composite material samples instrumented with sensors to measure stress and strain fields.\n    \n- **Digital/AI:** Utilizes microscale neural operators to predict and project stress and strain fields onto the sample surface for real-time visualization.\n    \n- **Member Interest:** Ceramic Matrix Composites (CMCs) testing and physics-based failure modeling (UDRI), 3D optical strain tracking and Digital Image Correlation (Trilion Quality Systems), real-time multiphysics co-simulation and visualization (Ansys), immersive AR/VR digital twin projections (Bloc Digital).",
       "relativePath": "content/projects/microscale-inspector.md"
     },
     {
       "id": "mosa-payload-pod",
       "title": "MOSA-Compliant Spart Payload Pod",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Robotics & Perception Team",
       "tools": [
@@ -614,12 +597,13 @@
         "electronic-assembly"
       ],
       "summary": "A modular, MOSA-compliant payload for a custom sensing application.",
-      "body": "# MOSA-Compliant Smart Payload Pod\n\n- **Physical:** A 3D-printed, quick-release modular payload enclosure housing custom PCBs (power distribution, sensor signal conditioning) that connects via a standardized physical and electrical pinout interface.\n    \n- **Digital/AI:** Automatically broadcasts its payload descriptor and telemetry schema upon connection to an onboard edge computer.\n    \n- **Member Interest:** MOSA hardware integration (TangramFlex, Psoas), avionics retrofits (Field Aerospace, Sumaria), custom fabrication (Sinclair, ARCTOS).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[PCB CNC Milling & Prototyping Station](../tools/pcb-fabrication.md)** (Physical Machinery) - Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.",
+      "body": "# MOSA-Compliant Smart Payload Pod\n\n- **Physical:** A 3D-printed, quick-release modular payload enclosure housing custom PCBs (power distribution, sensor signal conditioning) that connects via a standardized physical and electrical pinout interface.\n    \n- **Digital/AI:** Automatically broadcasts its payload descriptor and telemetry schema upon connection to an onboard edge computer.\n    \n- **Member Interest:** MOSA hardware integration (TangramFlex, Psoas), avionics retrofits (Field Aerospace, Sumaria), custom fabrication (Sinclair, ARCTOS).",
       "relativePath": "content/projects/mosa-payload-pod.md"
     },
     {
       "id": "threat-detection-pod",
       "title": "Multi-Modal Acoustic-Visual Threat Detection Pod",
+      "icon": "folder-kanban",
       "status": "Concept",
       "lead": "Robotics & Perception Team",
       "tools": [
@@ -633,7 +617,7 @@
         "electronic-assembly"
       ],
       "summary": "A weatherized 3D-printed sensor pod combining a MEMS microphone array, optical camera, and edge AI processor for real-time acoustic-visual threat classification and camera slewing.",
-      "body": "# Multi-Modal Acoustic-Visual Threat Detection Pod\r\n\r\n- **Physical:** A compact, weatherized 3D-printed housing combining a MEMS microphone array, a compact optical camera, and an embedded edge processor (e.g., Jetson or NXP) on a custom power board.\r\n    \r\n- **Digital/AI:** Runs lightweight acoustic classification (e.g., drone motor frequency or impact detection) to trigger directional camera slewing and target segmentation models.\r\n    \r\n- **Member Interest:** Advanced sensing/MASINT (US MASINT Foundation), edge compute infrastructure (IBM, HumanIT), tactical deployment (Army Cyber Command).\n\n## Related Items\n\n### <i data-lucide=\"wrench\"></i> Tools & Equipment Used\n- **[FDM 3D Printer Bank](../tools/fdm-3dp.md)** (Physical Machinery) - High-resolution FDM 3D printer for rapid prototyping and small-scale production.\n- **[PCB CNC Milling & Prototyping Station](../tools/pcb-fabrication.md)** (Physical Machinery) - Precision PCB milling machine for rapid in-house prototyping of single- and double-sided printed circuit boards.\n- **[Soldering & Rework Station](../tools/soldering.md)** (Physical Tool) - Precision temperature-controlled soldering and hot air rework station for wires, through-hole, SMD components, and desoldering.\n- **[Oscilloscope](../tools/oscilloscope.md)** (Physical Machinery) - High-precision oscilloscope for analyzing electronic signals and waveforms.\n\n### <i data-lucide=\"layers\"></i> Capabilities Supported\n- **[Rapid Prototyping](../capabilities/rapid-prototyping.md)**: Quickly create physical components for projects with short timelines or rapid iteration cycles.\n- **[Electronic Assembly](../capabilities/electronic-assembly.md)**: Assemble and test electronic components and circuits for prototyping and production.",
+      "body": "# Multi-Modal Acoustic-Visual Threat Detection Pod\r\n\r\n- **Physical:** A compact, weatherized 3D-printed housing combining a MEMS microphone array, a compact optical camera, and an embedded edge processor (e.g., Jetson or NXP) on a custom power board.\r\n    \r\n- **Digital/AI:** Runs lightweight acoustic classification (e.g., drone motor frequency or impact detection) to trigger directional camera slewing and target segmentation models.\r\n    \r\n- **Member Interest:** Advanced sensing/MASINT (US MASINT Foundation), edge compute infrastructure (IBM, HumanIT), tactical deployment (Army Cyber Command).",
       "relativePath": "content/projects/threat-detection-pod.md"
     }
   ]

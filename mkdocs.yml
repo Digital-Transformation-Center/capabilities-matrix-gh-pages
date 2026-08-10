@@ -3,7 +3,7 @@ site_url: https://digital-transformation-center.github.io/capabilities-matrix-gh
 site_description: Digital Transformation Center Model Shop - Interactive Capabilities, Tools, and Demonstrator Projects Matrix
 copyright: Copyright &copy; 2026 Digital Transformation Center. All rights reserved.
 
-docs_dir: content
+docs_dir: .build_content
 
 theme:
   name: material
