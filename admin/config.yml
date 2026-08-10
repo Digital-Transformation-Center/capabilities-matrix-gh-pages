@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  site_domain: site_domain: dtc-modelshop-capabilities.netlify.app
   branch: main
 
 # Folder where user uploaded media files are saved
