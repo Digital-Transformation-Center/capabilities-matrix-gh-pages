@@ -72,6 +72,10 @@ if (fs.existsSync(adminSrc)) {
 function formatIconMarkup(iconStr) {
   if (!iconStr) return '<i data-lucide="cpu"></i>';
   let str = String(iconStr).trim();
+  if (str.startsWith(':lucide-') && str.endsWith(':')) {
+    const iconName = str.replace(/^:lucide-/, '').replace(/:$/, '');
+    return `<i data-lucide="${iconName}"></i>`;
+  }
   if (str.startsWith(':') && str.endsWith(':')) return str;
   if (str.includes('/')) {
     str = str.replace(/\//g, '-');
@@ -116,6 +120,12 @@ function parseDimensions(dim) {
   return null;
 }
 
+// Helper to process :lucide-icon-name: shortcodes into <i data-lucide="icon-name"></i>
+function processLucideShortcodes(contentStr) {
+  if (!contentStr) return '';
+  return contentStr.replace(/:lucide-([a-z0-9-]+):/g, '<i data-lucide="$1"></i>');
+}
+
 // 1. Read Capabilities
 const capabilityFiles = getMdFiles('capabilities');
 const capabilitiesMap = {};
@@ -128,11 +138,11 @@ capabilityFiles.forEach(({ fileName, fullPath, relativePath }) => {
   capabilitiesMap[id] = {
     id: id,
     title: data.title || id,
-    icon: data.icon || 'Cpu',
+    icon: data.icon || 'cpu',
     color: data.color || '#3B82F6',
     category: data.category || 'General Capability',
     summary: data.summary || '',
-    body: content.trim(),
+    body: processLucideShortcodes(content.trim()),
     relativePath: relativePath,
     tools: [],
     projects: []

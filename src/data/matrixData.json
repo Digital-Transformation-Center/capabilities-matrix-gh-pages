@@ -1,5 +1,5 @@
 {
-  "compiledAt": "2026-08-10T18:56:52.818Z",
+  "compiledAt": "2026-08-10T19:12:17.430Z",
   "capabilities": [
     {
       "id": "electronic-assembly",
@@ -29,7 +29,7 @@
     {
       "id": "index",
       "title": "index",
-      "icon": "Cpu",
+      "icon": "cpu",
       "color": "#3B82F6",
       "category": "General Capability",
       "summary": "",

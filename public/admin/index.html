@@ -39,23 +39,6 @@
       });
     }
 
-    // MutationObserver to replace Netlify Identity button text with "Login to DTC Model Shop CMS"
-    const updateButtonText = () => {
-      const targetText = "Login to DTC Model Shop CMS";
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach(btn => {
-        if (btn.textContent && (btn.textContent.includes('Netlify Identity') || btn.textContent.includes('Login with') || btn.textContent.includes('Log in with'))) {
-          btn.textContent = targetText;
-        }
-      });
-    };
-
-    const observer = new MutationObserver(updateButtonText);
-    document.addEventListener("DOMContentLoaded", () => {
-      observer.observe(document.body, { childList: true, subtree: true });
-      setInterval(updateButtonText, 300);
-    });
-
     // Enable Manual Initialization for Local Mock Mode
     window.CMS_MANUAL_INIT = true;
   </script>
@@ -64,10 +47,9 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
-    // Local Dev Mode: Auto-authenticate as mock user for testing UI without Netlify login
-    const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-
     if (window.CMS) {
+      // Local Dev Mode setup
+      const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
       if (isLocal) {
         window.CMS.init({
           config: {
